@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { CaseStudyImage } from "@/components/CaseStudyImage";
+import { HeroFilmFrames } from "@/components/HeroFilmFrames";
 import { CaseStudyNav } from "@/components/CaseStudyNav";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { SiteHeader } from "@/components/SiteHeader";
-
 const navigation = [
   { label: "Overview", href: "#overview" },
   { label: "Big Idea", href: "#big-idea" },
@@ -344,11 +344,7 @@ className="mb-10 max-w-md aspect-[3/4]"
               A quiet acknowledgement of everyday care.
             </h2>
 
-            <CaseStudyImage
-  src="/images/aldi/aldi-film.png"
-  alt="Five-frame campaign storyboard showing everyday budgeting choices"
-  className="aspect-[3/2]"
-/>
+            <HeroFilmFrames />
 
             <div className="mt-10 grid gap-px overflow-hidden bg-[#111111]/15 sm:grid-cols-5">
               {[
