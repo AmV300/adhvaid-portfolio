@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseStudyImage } from "@/components/CaseStudyImage";
 import { CaseStudyNav } from "@/components/CaseStudyNav";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -47,6 +48,13 @@ export default function AldiCaseStudy() {
           </p>
         </div>
 
+        <CaseStudyImage
+  src="/images/aldi/aldi-cover.png"
+  alt="A mother helping her child with schoolwork at home"
+  className="mt-16 aspect-[16/8]"
+  fit="contain"
+  priority
+/>
         <div className="mt-16 aspect-[16/8] bg-[#D9B75D] p-6 md:p-10">
           <div className="flex h-full flex-col justify-between">
             <p className="text-sm uppercase tracking-[0.14em] text-[#111111]/65">
