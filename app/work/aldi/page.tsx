@@ -293,6 +293,11 @@ export default function AldiCaseStudy() {
           </section>
 
           <section id="experience" className="scroll-mt-10">
+            <CaseStudyImage
+  src="/images/aldi/aldi-everyday-2.webp"
+  alt="A quiet moment at home representing the care behind everyday choices"
+className="mb-10 max-w-md aspect-[3/4]"
+/>
             <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
               Brand Experiences
             </p>
@@ -339,6 +344,12 @@ export default function AldiCaseStudy() {
               A quiet acknowledgement of everyday care.
             </h2>
 
+            <CaseStudyImage
+  src="/images/aldi/aldi-film.png"
+  alt="Five-frame campaign storyboard showing everyday budgeting choices"
+  className="aspect-[3/2]"
+/>
+
             <div className="mt-10 grid gap-px overflow-hidden bg-[#111111]/15 sm:grid-cols-5">
               {[
                 "She plans carefully.",
@@ -369,7 +380,11 @@ export default function AldiCaseStudy() {
           <section
             id="reflection"
             className="scroll-mt-10 border-t border-[#111111]/15 pt-12"
-          >
+          ><CaseStudyImage
+  src="/images/aldi/aldi-tomorrow.png"
+  alt="A parent watching their child walk to school"
+  className="mb-10 aspect-[3/2]"
+/>
             <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
               Reflection
             </p>
