@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CaseStudyImage } from "@/components/CaseStudyImage";
+import { CaseStudyHero } from "@/components/CaseStudyHero";
 import { HeroFilmFrames } from "@/components/HeroFilmFrames";
 import { CaseStudyNav } from "@/components/CaseStudyNav";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
@@ -28,57 +29,26 @@ export default function AldiCaseStudy() {
     <main className="min-h-screen bg-[#FAFAF8] text-[#111111]">
       <SiteHeader />
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-14 md:px-10 md:pb-24 md:pt-20">
-        <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
-          Aldi UK · Independent Spec Project
-        </p>
-
-        <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <h1 className="font-display text-6xl font-medium leading-[0.9] tracking-[-0.07em] sm:text-8xl md:text-9xl">
-              Care,
-              <br />
-              Not Compromise
-            </h1>
-          </div>
-
-          <p className="max-w-sm text-base leading-relaxed text-[#6B6B6B] lg:col-span-4">
-            Reframing value from what people save to what those savings make
-            possible.
-          </p>
-        </div>
-
-        <CaseStudyImage
-  src="/images/aldi/aldi-cover.png"
-  alt="A mother helping her child with schoolwork at home"
-  className="mt-16 aspect-[16/8]"
-  fit="contain"
-  priority
+      <CaseStudyHero
+  eyebrow="Aldi UK · Independent Spec Project"
+  title={
+    <>
+      Care,
+      <br />
+      Not Compromise
+    </>
+  }
+  summary="Reframing value from what people save to what those savings make possible."
+  imageSrc="/images/aldi/aldi-cover.png"
+  imageAlt="A mother helping her child with schoolwork at home"
+  meta="Brand Strategy · Campaign Platform"
+  disclaimer="Not affiliated with or endorsed by Aldi."
 />
-        <div className="mt-16 aspect-[16/8] bg-[#D9B75D] p-6 md:p-10">
-          <div className="flex h-full flex-col justify-between">
-            <p className="text-sm uppercase tracking-[0.14em] text-[#111111]/65">
-              Brand Strategy & Campaign Platform
-            </p>
 
-            <p className="font-display max-w-3xl text-3xl leading-[0.98] tracking-[-0.05em] md:text-5xl">
-              Value is not only what people save. It is what those savings make
-              possible.
-            </p>
+     <CaseStudyNav items={navigation} />
 
-            <p className="text-xs text-[#111111]/60">
-              Not affiliated with or endorsed by Aldi.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 md:px-10 lg:grid-cols-12">
-        <aside className="lg:col-span-3">
-          <CaseStudyNav items={navigation} />
-        </aside>
-
-        <article className="space-y-24 lg:col-span-9">
+<div className="mx-auto max-w-7xl px-6 pb-28 pt-16 md:px-10 md:pt-20">
+  <article className="max-w-4xl space-y-28">
           <section id="overview" className="scroll-mt-10">
             <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
               Project Overview
