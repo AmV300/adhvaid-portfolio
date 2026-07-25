@@ -7,7 +7,9 @@ import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { SiteHeader } from "@/components/SiteHeader";
 const navigation = [
   { label: "Overview", href: "#overview" },
+  { label: "My Role", href: "#role" },
   { label: "Big Idea", href: "#big-idea" },
+  { label: "Challenge", href: "#challenge" },
   { label: "Insight", href: "#insight" },
   { label: "Strategy", href: "#strategy" },
   { label: "Process", href: "#process" },
@@ -49,77 +51,95 @@ export default function AldiCaseStudy() {
 
 <div className="mx-auto max-w-7xl px-6 pb-28 pt-16 md:px-10 md:pt-20">
   <article className="max-w-4xl space-y-28">
-          <section id="overview" className="scroll-mt-10">
-            <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
-              Project Overview
-            </p>
+      <section id="overview" className="scroll-mt-24">
+  <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
+    Project Overview
+  </p>
 
-            <h2 className="font-display mt-5 max-w-3xl text-4xl font-medium leading-tight tracking-[-0.05em] md:text-5xl">
-              Aldi has earned trust through price. This project explores how it
-              could earn recognition through care.
-            </h2>
+  <h2 className="font-display mt-6 max-w-4xl text-4xl font-medium leading-[1.02] tracking-[-0.055em] md:text-6xl">
+    Aldi has earned trust by making low prices dependable. The opportunity was
+    to show the care those savings protect.
+  </h2>
 
-            <div className="mt-10 grid border-t border-[#111111]/15 sm:grid-cols-2">
-              <div className="border-b border-[#111111]/15 py-5 sm:pr-8">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Challenge
-                </p>
-                <p className="mt-2 leading-relaxed">
-                  Move beyond a purely transactional relationship with
-                  price-conscious customers.
-                </p>
-              </div>
+  <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#6B6B6B]">
+    This independent strategy project reframes Aldi&apos;s value from a
+    financial benefit into an emotional one: every careful choice can make
+    something that matters feel more possible.
+  </p>
 
-              <div className="border-b border-[#111111]/15 py-5 sm:pl-8">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Opportunity
-                </p>
-                <p className="mt-2 leading-relaxed">
-                  Make the everyday discipline of budgeting feel recognised,
-                  useful and human.
-                </p>
-              </div>
+  <dl className="mt-14 grid border-y border-[#111111]/15 md:grid-cols-3">
+    <div className="py-6 md:pr-7">
+      <dt className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
+        Starting Point
+      </dt>
+      <dd className="mt-3 leading-relaxed">
+        A trusted price leader whose everyday shopping experience can still
+        feel transactional.
+      </dd>
+    </div>
 
-              <div className="border-b border-[#111111]/15 py-5 sm:pr-8">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Output
-                </p>
-                <p className="mt-2 leading-relaxed">
-                  A positioning platform, customer journey, experience ideas and
-                  campaign concept.
-                </p>
-              </div>
+    <div className="border-t border-[#111111]/15 py-6 md:border-l md:border-t-0 md:px-7">
+      <dt className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
+        Strategic Move
+      </dt>
+      <dd className="mt-3 leading-relaxed">
+        Shift value from simply saving money to enabling what matters most.
+      </dd>
+    </div>
 
-              <div className="border-b border-[#111111]/15 py-5 sm:pl-8">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Context
-                </p>
-                <p className="mt-2 leading-relaxed">
-                  Independent brand strategy and campaign concept for Aldi UK.
-                </p>
-              </div>
-            </div>
-          </section>
+    <div className="border-t border-[#111111]/15 py-6 md:border-l md:border-t-0 md:pl-7">
+      <dt className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
+        Outcome
+      </dt>
+      <dd className="mt-3 leading-relaxed">
+        A positioning platform, customer journey, experience concepts and
+        campaign system.
+      </dd>
+    </div>
+  </dl>
+</section>
 
-          <section id="role" className="scroll-mt-10">
-            <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
-              My Role
-            </p>
+<section id="role" className="scroll-mt-24 border-t border-[#111111]/15 pt-12">
+  <div className="grid gap-8 md:grid-cols-12">
+    <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B] md:col-span-4">
+      My Role
+    </p>
 
-            <div className="mt-5 grid gap-8 border-t border-[#111111]/15 pt-6 md:grid-cols-2">
-              <p className="font-display text-3xl font-medium leading-tight tracking-[-0.04em]">
-                Independent strategy and creative concept development.
-              </p>
+    <div className="md:col-span-8">
+      <h2 className="font-display max-w-2xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-4xl">
+        I shaped the project from consumer insight to campaign system.
+      </h2>
 
-              <ul className="space-y-2 text-[#6B6B6B]">
-                <li>Research synthesis</li>
-                <li>Consumer insight and customer journey</li>
-                <li>Brand positioning and platform</li>
-                <li>Experience concept development</li>
-                <li>Campaign and social content direction</li>
-              </ul>
-            </div>
-          </section>
+      <p className="mt-5 max-w-xl leading-relaxed text-[#6B6B6B]">
+        An independent strategy and creative direction project exploring how
+        Aldi could bring more recognition and reassurance into everyday
+        budgeting.
+      </p>
+
+      <div className="mt-10 grid border-t border-[#111111]/15 pt-5 sm:grid-cols-2">
+        <div>
+          <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
+            Scope
+          </p>
+          <p className="mt-3 leading-relaxed">
+            Research synthesis, consumer insight, customer journey and brand
+            positioning.
+          </p>
+        </div>
+
+        <div className="mt-6 sm:mt-0">
+          <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
+            Creative Development
+          </p>
+          <p className="mt-3 leading-relaxed">
+            Campaign platform, experience concepts, Hero Film and social
+            content direction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
           <section
             id="big-idea"
@@ -144,56 +164,89 @@ export default function AldiCaseStudy() {
             </p>
           </section>
 
-          <section id="insight" className="scroll-mt-10">
-            <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
-              The Human Insight
-            </p>
+          <section
+  id="challenge"
+  className="scroll-mt-24 border-t border-[#111111]/15 pt-12"
+>
+  <div className="grid gap-8 md:grid-cols-12">
+    <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B] md:col-span-4">
+      The Challenge
+    </p>
 
-            <h2 className="font-display mt-5 max-w-3xl text-4xl font-medium leading-tight tracking-[-0.05em] md:text-5xl">
-              People don&apos;t budget because they want to. They budget because
-              they care.
-            </h2>
+    <div className="md:col-span-8">
+      <h2 className="font-display max-w-3xl text-3xl font-medium leading-[1.02] tracking-[-0.05em] md:text-5xl">
+        Aldi is trusted for low prices, but price alone can leave a relationship
+        feeling transactional.
+      </h2>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              <div className="bg-[#E8E5DB] p-6 md:p-8">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Audience
-                </p>
-                <p className="font-display mt-4 text-3xl font-medium tracking-[-0.04em]">
-                  Emma, 32
-                </p>
-                <p className="mt-4 leading-relaxed text-[#6B6B6B]">
-                  A primary school teacher and mother of two in Leeds. She plans
-                  meals, checks prices and sticks to a list so she can give her
-                  children opportunities without added stress.
-                </p>
-              </div>
+      <div className="mt-12 grid gap-8 border-t border-[#111111]/15 pt-6 md:grid-cols-2">
+        <div>
+          <p className="font-display text-7xl font-medium leading-none tracking-[-0.07em] md:text-8xl">
+            78%
+          </p>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#6B6B6B]">
+            of financially pressured shoppers are buying cheaper groceries.
+          </p>
+        </div>
 
-              <div className="border border-[#111111]/15 p-6 md:p-8">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Customer Journey
-                </p>
-                <div className="mt-5 space-y-5">
-                  <p>
-                    <span className="font-medium">Before:</span> determined and
-                    hopeful while planning carefully.
-                  </p>
-                  <p>
-                    <span className="font-medium">During:</span> focused, but
-                    weighed down by constant trade-offs.
-                  </p>
-                  <p>
-                    <span className="font-medium">After:</span> relieved and
-                    proud when the total confirms her effort.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+        <p className="max-w-md text-lg leading-relaxed text-[#6B6B6B]">
+          Budgeting is rarely just about spending less. It is about protecting
+          the people, plans and small moments that matter. The opportunity was
+          to make Aldi&apos;s practical value feel more emotionally understood.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+          <section
+  id="insight"
+  className="scroll-mt-24 border-t border-[#111111]/15 pt-12"
+>
+  <div className="grid gap-8 md:grid-cols-12">
+    <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B] md:col-span-4">
+      Research &amp; Insight
+    </p>
 
+    <div className="md:col-span-8">
+      <h2 className="font-display max-w-3xl text-4xl font-medium leading-[1.02] tracking-[-0.055em] md:text-6xl">
+        People don&apos;t budget because they want to. They budget because they
+        care.
+      </h2>
+
+      <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#6B6B6B]">
+        As costs rise, everyday decisions become an often invisible form of
+        care: checking prices, planning ahead, and finding ways to make what
+        matters still possible.
+      </p>
+
+      <div className="mt-12 grid border-y border-[#111111]/15 md:grid-cols-2">
+        <div className="py-6 md:pr-8">
+          <p className="text-sm uppercase tracking-[0.14em] text-[#6B6B6B]">
+            The Behaviour
+          </p>
+          <p className="mt-4 max-w-md leading-relaxed">
+            Comparing, planning and choosing lower-priced essentials is not
+            simply cost-cutting. It is a way to protect normality and hold on
+            to what comes next.
+          </p>
+        </div>
+
+        <div className="border-t border-[#111111]/15 py-6 md:border-l md:border-t-0 md:pl-8">
+          <p className="text-sm uppercase tracking-[0.14em] text-[#6B6B6B]">
+            The Insight
+          </p>
+          <p className="mt-4 max-w-md leading-relaxed">
+            When a brand only talks about price, it can miss the emotional work
+            behind the basket. Aldi had an opportunity to recognise that work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
           <section id="strategy" className="scroll-mt-10">
             <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
-              Strategic Response
+              Strategy
             </p>
 
             <h2 className="font-display mt-5 text-4xl font-medium tracking-[-0.05em] md:text-5xl">
