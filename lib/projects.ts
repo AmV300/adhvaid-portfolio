@@ -23,10 +23,10 @@ export const projects: Project[] = [
     number: "02",
     title: "Move Softly",
     client: "Concept Footwear Campaign",
-    type: "Creative Strategy · Brand Identity",
+    type: "Campaign Concept · Visual Direction",
     description:
       "A conceptual campaign exploring comfort as a constant companion through movement and emotion.",
    href: "/work/move-softly",
-    colour: "bg-[#DEDCD5]",
+   colour: "bg-[#DCE3D9]",
   },
 ];
