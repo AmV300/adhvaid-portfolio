@@ -18,21 +18,24 @@ export function SiteFooter() {
 
       <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm">
         <a
-          href="mailto:your-email@example.com"
+          href="mailto:adhvaidmv@gmail.com"
           className="border-b border-[#111111] pb-1 transition-opacity hover:opacity-60"
         >
           Email me
         </a>
 
         <a
-          href="#"
+          href="https://www.linkedin.com/in/adhvaid-mv/"
+          target="_blank"
+          rel="noreferrer"
           className="border-b border-[#111111] pb-1 transition-opacity hover:opacity-60"
         >
           LinkedIn
         </a>
 
         <a
-          href="#"
+          href="/documents/adhvaid-mv-resume.pdf"
+          download
           className="border-b border-[#111111] pb-1 transition-opacity hover:opacity-60"
         >
           Download CV
