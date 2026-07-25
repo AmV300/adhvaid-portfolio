@@ -26,7 +26,7 @@ export const projects: Project[] = [
     type: "Creative Strategy · Brand Identity",
     description:
       "A conceptual campaign exploring comfort as a constant companion through movement and emotion.",
-    href: "/work/move-softly",
+   href: "/work/move-softly",
     colour: "bg-[#DEDCD5]",
   },
 ];
