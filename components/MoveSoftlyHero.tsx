@@ -5,12 +5,12 @@ export function MoveSoftlyHero() {
   return (
     <section className="relative min-h-[78svh] overflow-hidden bg-[#24372A] text-white">
       <Image
-        src="/images/move-softly/move-softly-hero.png"
+        src="/images/move-softly/move-softly-hero-hq.webp"
         alt="A person moving through their day in comfortable footwear"
         fill
         priority
-        quality={90}
         sizes="100vw"
+        quality={90}
         className="object-cover"
       />
 
@@ -22,7 +22,7 @@ export function MoveSoftlyHero() {
     href="/"
     className="w-fit text-xs uppercase tracking-[0.16em] text-white/80 transition-opacity hover:opacity-60"
   >
-    ← Selected Work
+    ← Investigations
   </Link>
 
   <p className="text-xs uppercase tracking-[0.16em] text-white/70">
@@ -34,11 +34,12 @@ export function MoveSoftlyHero() {
           <h1 className="font-display text-6xl font-medium leading-[0.88] tracking-[-0.07em] sm:text-8xl lg:text-9xl">
             Move
             <br />
+            {" "}
             Softly
           </h1>
 
           <p className="mt-8 max-w-md text-base leading-relaxed text-white/80 md:text-lg">
-            Comfort that keeps pace with the rhythm of real life.
+            Made to move through the full rhythm of real life.
           </p>
         </div>
 

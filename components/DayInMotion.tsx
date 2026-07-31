@@ -2,39 +2,39 @@ import Image from "next/image";
 
 const moments = [
   {
-    number: "01",
+    time: "06:42",
     label: "The Commute",
-    title: "The day begins in motion.",
+    title: "Before the day finds its rhythm.",
     description:
-      "Comfort sets a quieter tone before the pace of the day begins to build.",
-    image: "/images/move-softly/move-softly-commute.jpg",
+      "The first steps arrive before the body has fully caught up. The promise begins here, not after the rush is over.",
+    image: "/images/move-softly/move-softly-commute-hq.webp",
     alt: "A person commuting through the city",
   },
   {
-    number: "02",
-    label: "The Pace",
-    title: "Movement becomes constant.",
+    time: "09:17",
+    label: "The Rush",
+    title: "The pace changes. The feeling should not.",
     description:
-      "Short distances, long routes and all the in-between moments ask the body to keep up.",
-    image: "/images/move-softly/move-softly-pace.jpg",
+      "Crowded platforms, quick crossings and constant direction changes turn movement into the background of the day.",
+    image: "/images/move-softly/move-softly-pace-hq.webp",
     alt: "A person moving through a busy day",
   },
   {
-    number: "03",
+    time: "15:48",
     label: "The Long Stretch",
-    title: "Some days run longer than expected.",
+    title: "Hours in, the day is still asking.",
     description:
-      "Comfort should keep pace with the day, rather than asking for a pause from it.",
-    image: "/images/move-softly/move-softly-stretch.webp",
+      "Reliability matters most when the day has already asked for more than expected and still is not finished.",
+    image: "/images/move-softly/move-softly-stretch-hq.webp",
     alt: "A person continuing through a long day",
   },
   {
-    number: "04",
+    time: "19:06",
     label: "The Return",
-    title: "The walk home still matters.",
+    title: "The last steps deserve what the first ones had.",
     description:
-      "Comfort is not a reward at the end of the day. It is proof that it stayed with you throughout it.",
-    image: "/images/move-softly/move-softly-return.jpg",
+      "The walk home is not an afterthought. It is where the promise proves it never clocked out.",
+    image: "/images/move-softly/move-softly-return-hq.webp",
     alt: "A person walking home",
   },
 ];
@@ -49,14 +49,14 @@ export function DayInMotion() {
           </p>
 
           <h2 className="font-display mt-6 text-5xl font-medium leading-[0.98] tracking-[-0.06em] md:text-7xl">
-            From the first step out to the last step home.
+            One day. No pause button.
           </h2>
         </div>
 
         <div className="mt-20 space-y-24 md:mt-28">
           {moments.map((moment, index) => (
             <article
-              key={moment.number}
+              key={moment.time}
               className="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-16"
             >
               <div
@@ -68,8 +68,8 @@ export function DayInMotion() {
                   src={moment.image}
                   alt={moment.alt}
                   fill
+                  sizes="(min-width: 1280px) 720px, (min-width: 1024px) 58vw, 100vw"
                   quality={90}
-                  sizes="(min-width: 1024px) 58vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -80,7 +80,7 @@ export function DayInMotion() {
                 }`}
               >
                 <p className="text-sm uppercase tracking-[0.16em] text-[#6B6B6B]">
-                  {moment.number} / {moment.label}
+                  {moment.time} / {moment.label}
                 </p>
 
                 <h3 className="font-display mt-5 text-3xl font-medium leading-[1.02] tracking-[-0.045em] md:text-4xl">

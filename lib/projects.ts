@@ -3,9 +3,12 @@ export type Project = {
   title: string;
   client: string;
   type: string;
+  question: string;
   description: string;
   href: string;
-  colour: string;
+  image: string;
+  imageAlt: string;
+  imagePosition: "left" | "right";
 };
 
 export const projects: Project[] = [
@@ -14,19 +17,26 @@ export const projects: Project[] = [
     title: "Care, Not Compromise",
     client: "Aldi UK",
     type: "Brand Strategy · Campaign Platform",
+    question: "How can Aldi make value feel more human?",
     description:
-      "A speculative strategy that reframes Aldi’s value around the care behind everyday choices.",
+      "A brand strategy investigation exploring how Aldi could move beyond price communication and recognise the meaning behind everyday savings.",
     href: "/work/aldi",
-    colour: "bg-[#D9B75D]",
+    image: "/images/aldi/aldi-cover.png",
+    imageAlt:
+      "A parent and child at a kitchen table beside an Aldi shopping bag",
+    imagePosition: "left",
   },
   {
     number: "02",
-    title: "Move Softly",
-    client: "Concept Footwear Campaign",
-    type: "Campaign Concept · Visual Direction",
+    title: "Comfort that doesn’t clock out",
+    client: "Move Softly",
+    type: "Brand Strategy · Creative Campaign",
+    question: "How can a brand stay present through life in motion?",
     description:
-      "A conceptual campaign exploring comfort as a constant companion through movement and emotion.",
-   href: "/work/move-softly",
-   colour: "bg-[#DCE3D9]",
+      "A creative investigation exploring how a footwear brand can become a constant companion through the changing rhythms of everyday life.",
+    href: "/work/move-softly",
+    image: "/images/move-softly/move-softly-hero.png",
+    imageAlt: "A commuter walking beside a city bridge",
+    imagePosition: "right",
   },
 ];

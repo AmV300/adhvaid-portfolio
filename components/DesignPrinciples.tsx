@@ -7,12 +7,12 @@ const principles = [
   {
     word: "Steady",
     description:
-      "A restrained palette and unforced compositions reflect the dependable support the idea promises.",
+      "A restrained palette and unforced compositions reflect the dependability at the heart of the idea.",
   },
   {
     word: "Sustained",
     description:
-      "Each moment connects to the next, showing comfort as something that lasts beyond a single step.",
+      "Each moment connects to the next, creating a sense of ease that lasts beyond a single step.",
   },
 ];
 

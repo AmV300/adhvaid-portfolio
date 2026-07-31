@@ -18,12 +18,12 @@ export function CaseStudyNav({ items }: CaseStudyNavProps) {
           Case Study
         </p>
 
-        <div className="flex min-w-0 gap-5 overflow-x-auto text-sm">
+        <div className="case-study-nav-links flex min-w-0 gap-5 overflow-x-auto text-sm">
           {items.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap text-[#6B6B6B] transition-colors hover:text-[#111111]"
+              className="inline-flex min-h-9 items-center whitespace-nowrap rounded-sm text-[#6B6B6B] outline-none transition-colors hover:text-[#111111] focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-2"
             >
               {item.label}
             </a>

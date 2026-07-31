@@ -21,7 +21,7 @@ export function CaseStudyHero({
   disclaimer,
 }: CaseStudyHeroProps) {
   return (
-    <section className="relative aspect-[2/1] min-h-[560px] overflow-hidden bg-[#111111] text-white md:min-h-[640px]">
+    <section className="relative min-h-[560px] w-full overflow-hidden bg-[#111111] text-white md:aspect-[2/1] md:min-h-[640px]">
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -41,7 +41,7 @@ export function CaseStudyHero({
     href="/"
     className="w-fit text-xs uppercase tracking-[0.16em] text-white/80 transition-opacity hover:opacity-60"
   >
-    ← Selected Work
+    ← Investigations
   </Link>
 
   <p className="text-xs uppercase tracking-[0.16em] text-white/70">
@@ -49,7 +49,7 @@ export function CaseStudyHero({
   </p>
 </div>
           <div className="max-w-4xl">
-            <h1 className="font-display text-5xl font-medium leading-[0.9] tracking-[-0.07em] sm:text-7xl lg:text-8xl">
+            <h1 className="font-display text-[2.7rem] font-medium leading-[0.9] tracking-[-0.07em] sm:text-7xl lg:text-8xl">
               {title}
             </h1>
 
