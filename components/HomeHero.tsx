@@ -378,7 +378,7 @@ export function HomeProfessionalIntroduction() {
     >
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-14 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)] md:px-10 md:py-20">
         <p className="home-intro-label text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
-          Creative Strategy · Content
+          What I do
         </p>
 
         <div>
