@@ -67,6 +67,13 @@ export default function AldiCaseStudy() {
               prices around the care behind everyday savings.
             </p>
 
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[#7A7A74]">
+              <span className="font-medium text-[#4F4F4A]">Approach:</span>{" "}
+              desk research into shopper pressure, Aldi&apos;s public value
+              positioning and category communication, followed by a
+              speculative strategic hypothesis.
+            </p>
+
             <dl className="mt-14 grid border-y border-[#111111]/15 md:grid-cols-3">
               <div className="py-6 md:pr-8">
                 <dt className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
