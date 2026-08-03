@@ -304,6 +304,14 @@ export function HomeIntroduction() {
     <section className="home-opening-thought">
       <div className="mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 py-20 md:px-10 md:py-28">
         <div className="max-w-5xl">
+          <p className="home-thought-role mb-7 text-xs font-medium uppercase tracking-[0.16em] text-[#6B6B6B] sm:text-sm">
+            Junior Creative Strategist
+            <span className="mx-2 text-[#A4A49D]" aria-hidden="true">
+              ·
+            </span>
+            Content Creator
+          </p>
+
           <h1 className="home-thought-primary font-display text-[clamp(2.55rem,12vw,3rem)] font-medium leading-[0.98] tracking-[-0.06em] sm:text-7xl md:text-8xl">
             Every person carries a different world.
           </h1>
@@ -370,7 +378,7 @@ export function HomeProfessionalIntroduction() {
     >
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-14 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)] md:px-10 md:py-20">
         <p className="home-intro-label text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
-          Multidisciplinary
+          Creative Strategy · Content
         </p>
 
         <div>
@@ -383,8 +391,9 @@ export function HomeProfessionalIntroduction() {
 
           <div className="home-intro-copy mt-7 max-w-[720px] text-[clamp(1.1rem,1.7vw,1.5rem)] leading-[1.5] text-[#6B6B6B]">
             <p>
-              I explore how observation becomes creation through brand
-              strategy, writing, film, photography and visual storytelling.
+              I turn observation into brand ideas, campaign narratives and
+              content through writing, film, photography and visual
+              storytelling.
             </p>
             <p className="mt-5">
               I use different mediums depending on what the idea needs.
