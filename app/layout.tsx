@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "./fonts/inter-latin.woff2",
+  display: "swap",
+  weight: "100 900",
   variable: "--font-body",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
+const spaceGrotesk = localFont({
+  src: "./fonts/space-grotesk-latin.woff2",
+  display: "swap",
+  weight: "300 700",
   variable: "--font-display",
 });
 
@@ -20,14 +24,14 @@ const siteUrl = productionHost
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Adhvaid MV — Investigations",
+    default: "Adhvaid MV — Creative Strategy & Content",
     template: "%s — Adhvaid MV",
   },
   description:
     "A multidisciplinary portfolio exploring brand strategy, writing, film, photography and visual storytelling by Adhvaid MV.",
   openGraph: {
     type: "website",
-    title: "Adhvaid MV — Investigations",
+    title: "Adhvaid MV — Creative Strategy & Content",
     description:
       "Questions explored through strategy, stories, images and experiences.",
     images: [
@@ -41,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adhvaid MV — Investigations",
+    title: "Adhvaid MV — Creative Strategy & Content",
     description:
       "Questions explored through strategy, stories, images and experiences.",
     images: ["/og.png"],
@@ -54,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
         {children}
       </body>

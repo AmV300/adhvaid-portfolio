@@ -229,31 +229,39 @@ body {
   pointer-events: none;
 }
 
+.home-thought-role,
 .home-thought-primary,
 .home-thought-supporting,
 .home-thought-invitation {
   will-change: transform, opacity;
 }
 
+.home-thought-role {
+  opacity: var(--thought-main-opacity);
+  transform: translate3d(0, var(--thought-main-y), 0);
+  animation: opening-thought-reveal 360ms
+    cubic-bezier(0.22, 1, 0.36, 1) 0ms backwards;
+}
+
 .home-thought-primary {
   opacity: var(--thought-main-opacity);
   transform: translate3d(0, var(--thought-main-y), 0);
-  animation: opening-thought-reveal 760ms
-    cubic-bezier(0.22, 1, 0.36, 1) 120ms backwards;
+  animation: opening-thought-reveal 440ms
+    cubic-bezier(0.22, 1, 0.36, 1) 40ms backwards;
 }
 
 .home-thought-supporting {
   opacity: var(--thought-support-opacity);
   transform: translate3d(0, var(--thought-support-y), 0);
-  animation: opening-thought-reveal 760ms
-    cubic-bezier(0.22, 1, 0.36, 1) 300ms backwards;
+  animation: opening-thought-reveal 420ms
+    cubic-bezier(0.22, 1, 0.36, 1) 120ms backwards;
 }
 
 .home-thought-invitation {
   opacity: var(--thought-invitation-opacity);
   transform: translate3d(0, var(--thought-invitation-y), 0);
-  animation: opening-thought-reveal 760ms
-    cubic-bezier(0.22, 1, 0.36, 1) 480ms backwards;
+  animation: opening-thought-reveal 420ms
+    cubic-bezier(0.22, 1, 0.36, 1) 200ms backwards;
 }
 
 .investigation-card-media,
