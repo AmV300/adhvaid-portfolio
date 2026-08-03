@@ -37,6 +37,13 @@ export default function MoveSoftlyCaseStudy() {
               like while life is still moving.
             </p>
 
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-[#7A7A74]">
+              Built as a self-initiated concept, the project uses familiar
+              commuter routines as a creative hypothesis. A live version would
+              test the audience tension and product promise with customer
+              research.
+            </p>
+
             <div className="mt-12 border-t border-[#111111]/15">
               <div className="grid gap-2 border-b border-[#111111]/15 py-5">
                 <p className="text-sm uppercase tracking-[0.14em] text-[#6B6B6B]">
