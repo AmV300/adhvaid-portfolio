@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export function AboutPreview() {
@@ -71,93 +70,37 @@ export function AboutPreview() {
 
         <div
           aria-label="Selected writing and photography"
-          className="observer-fragments mt-20 grid gap-12 md:mt-28 lg:grid-cols-12 lg:items-start lg:gap-10"
+          className="observer-fragments mt-12 flex flex-col gap-5 border-t border-[#111111]/15 pt-6 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 md:mt-16"
         >
-          <figure className="observer-fragment lg:col-span-8">
-            <a
-              href="https://www.instagram.com/my.hollow_frames/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="View Adhvaid's photography on Instagram"
-              className="group block outline-none focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F1F0EB]"
-            >
-              <div className="relative aspect-[1440/754] overflow-hidden bg-[#D8D5CC]">
-                <Image
-                  src="/images/observer/hollow-frames-autumn.jpg"
-                  alt="Autumn light seen through a narrow opening, photographed by Adhvaid"
-                  fill
-                  sizes="(min-width: 1024px) 66vw, 100vw"
-                  quality={90}
-                  className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.012] motion-reduce:transition-none"
-                />
-              </div>
-            </a>
+          <p className="text-xs uppercase tracking-[0.16em] text-[#6B6B6B] sm:mr-2">
+            Also making
+          </p>
 
-            <figcaption className="mt-6 grid gap-4 border-t border-[#111111]/15 pt-5 sm:grid-cols-[0.55fr_1.45fr]">
-              <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                Photography / Hollow Frames
-              </p>
-              <div>
-                <h3 className="font-display text-3xl font-medium leading-tight tracking-[-0.045em]">
-                  Beautiful accidents.
-                </h3>
-                <p className="mt-3 max-w-lg leading-relaxed text-[#5F5F5A]">
-                  Light, distance and the moments that appear only when the
-                  frame slows down.
-                </p>
-                <a
-                  href="https://www.instagram.com/my.hollow_frames/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex min-h-11 items-center gap-2 border-b border-[#111111]/35 py-2 text-sm transition-colors hover:border-[#111111]"
-                >
-                  View photographs <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </figcaption>
-          </figure>
+          <a
+            href="https://www.instagram.com/my.hollow_frames/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="View Adhvaid's photography on Instagram (Hollow Frames)"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#111111]/25 px-4 py-2 text-sm transition-colors hover:border-[#111111] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F1F0EB]"
+          >
+            <span className="text-[#6B6B6B]">Photography</span>
+            <span aria-hidden="true" className="text-[#6B6B6B]">→</span>
+            <span className="font-medium">@hollow_frames</span>
+            <span aria-hidden="true">↗</span>
+          </a>
 
-          <figure className="observer-fragment lg:col-span-4 lg:mt-28">
-            <a
-              href="https://www.instagram.com/paper_crumples/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Read Adhvaid's writing on Instagram"
-              className="group block outline-none focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F1F0EB]"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#E4E1D8]">
-                <Image
-                  src="/images/observer/paper-crumples-books.jpg"
-                  alt="A handwritten reflection by Adhvaid about discovering a love of books in childhood"
-                  fill
-                  sizes="(min-width: 1024px) 33vw, 100vw"
-                  quality={90}
-                  className="object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-[1.012] motion-reduce:transition-none"
-                />
-              </div>
-            </a>
-
-            <figcaption className="mt-6 border-t border-[#111111]/15 pt-5">
-              <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                Writing / Paper Crumples
-              </p>
-              <h3 className="font-display mt-5 text-3xl font-medium leading-tight tracking-[-0.045em]">
-                Thoughts given somewhere to unfold.
-              </h3>
-              <p className="mt-3 max-w-sm leading-relaxed text-[#5F5F5A]">
-                Fragments of memory, books and ordinary life, kept long enough
-                to become a page.
-              </p>
-              <a
-                href="https://www.instagram.com/paper_crumples/"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 inline-flex min-h-11 items-center gap-2 border-b border-[#111111]/35 py-2 text-sm transition-colors hover:border-[#111111]"
-              >
-                Read fragments <span aria-hidden="true">↗</span>
-              </a>
-            </figcaption>
-          </figure>
+          <a
+            href="https://www.instagram.com/paper_crumples/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Read Adhvaid's writing on Instagram (Paper Crumples)"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#111111]/25 px-4 py-2 text-sm transition-colors hover:border-[#111111] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F1F0EB]"
+          >
+            <span className="text-[#6B6B6B]">Writing</span>
+            <span aria-hidden="true" className="text-[#6B6B6B]">→</span>
+            <span className="font-medium">@paper_crumples</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>

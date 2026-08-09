@@ -118,14 +118,17 @@ export function HomeOpeningSequence() {
         return;
       }
 
-      const thoughtExit = scrollEase(0.28, 0.74, progress);
+      // Hero fades out fully (thoughtExit reaches 1 at progress 0.50) before the
+      // next section's entrance opacity passes ~0.3 (practiceEntrance crosses 0.3
+      // near progress 0.56), so the two blocks never render legibly at once.
+      const thoughtExit = scrollEase(0.24, 0.5, progress);
       const mainEntrance = 1;
       const supportEntrance = 1;
       const invitationEntrance = 1;
-      const practiceEntrance = scrollEase(0.28, 0.46, progress);
-      const introLabelEntrance = scrollEase(0.34, 0.54, progress);
-      const introTitleEntrance = scrollEase(0.44, 0.68, progress);
-      const introCopyEntrance = scrollEase(0.56, 0.82, progress);
+      const practiceEntrance = scrollEase(0.5, 0.66, progress);
+      const introLabelEntrance = scrollEase(0.54, 0.7, progress);
+      const introTitleEntrance = scrollEase(0.6, 0.78, progress);
+      const introCopyEntrance = scrollEase(0.68, 0.9, progress);
       const introductionExit = scrollEase(1.28, 1.74, progress);
       const investigationsEntrance = scrollEase(1.28, 1.46, progress);
       const investigationsLabelEntrance = scrollEase(1.34, 1.54, progress);
@@ -374,7 +377,7 @@ export function HomeProfessionalIntroduction() {
   return (
     <section
       aria-labelledby="introduction-title"
-      className="flex min-h-[78svh] items-center border-t border-[#111111]/15"
+      className="flex min-h-[78svh] items-center border-t border-[#111111]/15 bg-[#FAFAF8]"
     >
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-14 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)] md:px-10 md:py-20">
         <p className="home-intro-label text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
