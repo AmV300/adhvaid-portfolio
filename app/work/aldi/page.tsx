@@ -50,13 +50,16 @@ export default function AldiCaseStudy() {
 
       <article className="mx-auto max-w-7xl space-y-28 px-6 pb-28 pt-20 md:space-y-40 md:px-10 md:pb-40 md:pt-28">
         <section id="overview" className="scroll-mt-24">
-          <div className="border-t border-[#111111]/15 pt-5">
+          <div className="flex items-baseline justify-between gap-4 border-t border-[#111111]/15 pt-5">
             <p className="text-xs uppercase tracking-[0.2em] text-[#6B6B6B] md:text-sm">
               Project Overview
             </p>
+            <p className="text-xs uppercase tracking-[0.24em] tabular-nums text-[#9A9A93] md:text-sm">
+              01 <span className="text-[#C7C6BF]">/ 08</span>
+            </p>
           </div>
 
-          <h2 className="font-display mt-12 max-w-5xl text-[3rem] font-medium leading-[0.93] tracking-[-0.06em] md:mt-20 md:text-[6rem]">
+          <h2 className="font-display mt-14 max-w-[68rem] text-[3rem] font-medium leading-[0.9] tracking-[-0.065em] md:mt-24 md:text-[6.5rem]">
             Making value feel like care.
           </h2>
 
@@ -74,12 +77,12 @@ export default function AldiCaseStudy() {
             </p>
           </div>
 
-          <dl className="mt-16 grid gap-y-9 border-t border-[#111111]/15 pt-9 md:mt-24 md:grid-cols-3 md:gap-x-12">
+          <dl className="mt-16 grid gap-y-10 border-t border-[#111111]/15 pt-10 md:mt-28 md:grid-cols-3 md:gap-x-16">
             <div>
-              <dt className="text-xs uppercase tracking-[0.16em] text-[#8A8A84]">
+              <dt className="text-xs uppercase tracking-[0.18em] text-[#8A8A84]">
                 Role
               </dt>
-              <dd className="mt-4 text-[1.05rem] leading-relaxed text-[#2E2E2B]">
+              <dd className="mt-5 text-[1.15rem] leading-[1.5] text-[#2E2E2B]">
                 Brand Strategy
                 <br />
                 Consumer Insight
@@ -89,19 +92,19 @@ export default function AldiCaseStudy() {
             </div>
 
             <div>
-              <dt className="text-xs uppercase tracking-[0.16em] text-[#8A8A84]">
+              <dt className="text-xs uppercase tracking-[0.18em] text-[#8A8A84]">
                 Challenge
               </dt>
-              <dd className="mt-4 max-w-xs text-[1.05rem] leading-relaxed text-[#2E2E2B]">
+              <dd className="mt-5 max-w-xs text-[1.15rem] leading-[1.5] text-[#2E2E2B]">
                 Reframing affordability into emotional value.
               </dd>
             </div>
 
             <div>
-              <dt className="text-xs uppercase tracking-[0.16em] text-[#8A8A84]">
+              <dt className="text-xs uppercase tracking-[0.18em] text-[#8A8A84]">
                 Deliverables
               </dt>
-              <dd className="mt-4 text-[1.05rem] leading-relaxed text-[#2E2E2B]">
+              <dd className="mt-5 text-[1.15rem] leading-[1.5] text-[#2E2E2B]">
                 Campaign Platform
                 <br />
                 Customer Experience
