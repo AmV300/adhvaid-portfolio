@@ -380,31 +380,34 @@ export default function AldiCaseStudy() {
               </div>
 
               <div className="mt-12 grid gap-4 md:grid-cols-12 md:gap-5">
-                {/* Feature placement — large, navy */}
-                <div className="flex min-h-[320px] flex-col justify-between bg-[#102A43] p-8 text-[#F8F7F2] md:col-span-7 md:min-h-[400px] md:p-11">
-                  <p className="text-[0.7rem] uppercase tracking-[0.18em] text-white/45">
-                    Care, Not Compromise
+                {/* Dominant statement — the one you read first. Quiet setup,
+                    bold payoff, centred so the space reads as intentional. */}
+                <div className="flex min-h-[300px] flex-col justify-center bg-[#102A43] p-8 text-[#F8F7F2] md:col-span-8 md:min-h-[460px] md:p-14">
+                  <p className="font-display text-2xl font-normal leading-[1.05] tracking-[-0.02em] text-white/40 md:text-[1.75rem]">
+                    Good food today.
                   </p>
-                  <p className="font-display mt-10 max-w-md text-3xl font-medium leading-[1.04] tracking-[-0.045em] md:text-[2.75rem]">
-                    Good food today. More room tomorrow.
-                  </p>
-                </div>
-
-                {/* Quieter counterpart — light, inverted */}
-                <div className="flex min-h-[320px] flex-col justify-between bg-[#E8E5DB] p-8 text-[#111111] md:col-span-5 md:min-h-[400px] md:p-11">
-                  <span aria-hidden="true" className="block h-px w-10 bg-[#111111]/25" />
-                  <p className="font-display mt-10 text-3xl font-medium leading-[1.04] tracking-[-0.045em] md:text-4xl">
-                    Value that leaves space for what matters.
+                  <p className="font-display mt-1 text-[2.6rem] font-medium leading-[0.94] tracking-[-0.05em] md:mt-2 md:text-[4.25rem]">
+                    More room tomorrow.
                   </p>
                 </div>
 
-                {/* Closing banner — full width, navy */}
-                <div className="flex min-h-[190px] flex-col justify-between gap-8 bg-[#102A43] p-8 text-[#F8F7F2] md:col-span-12 md:flex-row md:items-end md:p-11">
-                  <p className="font-display max-w-2xl text-3xl font-medium leading-[1.04] tracking-[-0.045em] md:text-[2.75rem]">
-                    Your choices create more than savings.
+                {/* Secondary — smaller, cream, clearly subordinate */}
+                <div className="flex min-h-[220px] flex-col justify-center bg-[#E8E5DB] p-8 text-[#111111] md:col-span-4 md:min-h-[460px] md:p-11">
+                  <p className="font-display text-lg font-normal leading-[1.05] tracking-[-0.02em] text-[#6B6B6B] md:text-xl">
+                    Value that leaves
                   </p>
-                  <p className="shrink-0 text-[0.7rem] uppercase tracking-[0.18em] text-white/45 md:pb-2 md:text-right">
-                    Care, Not Compromise
+                  <p className="font-display mt-1 text-[2rem] font-medium leading-[0.98] tracking-[-0.045em] md:mt-2 md:text-[2.6rem]">
+                    space for what matters.
+                  </p>
+                </div>
+
+                {/* Closing line — full width, inline emphasis */}
+                <div className="flex min-h-[150px] items-center bg-[#102A43] p-8 text-[#F8F7F2] md:col-span-12 md:min-h-[190px] md:p-14">
+                  <p className="font-display text-[2rem] font-medium leading-[1] tracking-[-0.045em] md:text-[3rem]">
+                    <span className="font-normal text-white/40">
+                      Your choices create{" "}
+                    </span>
+                    more than savings.
                   </p>
                 </div>
               </div>
