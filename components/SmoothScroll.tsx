@@ -46,10 +46,9 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
       root
       ref={lenisRef}
       options={{
-        // Lighter feel: a higher lerp catches up to the pointer faster (less
-        // inertia/glide) and no fixed `duration` so wheel ticks don't ride a
-        // long eased tail.
-        lerp: 0.15,
+        // Middle-ground feel: no fixed `duration` (which caused a heavy eased
+        // tail), with a moderate lerp — some glide, but still responsive.
+        lerp: 0.12,
         smoothWheel: true,
         // Smoothly scroll same-page hash links; cross-page links fall through
         // to the Next.js router untouched (Lenis only intercepts anchors whose
