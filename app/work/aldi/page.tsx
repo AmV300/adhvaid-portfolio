@@ -379,21 +379,34 @@ export default function AldiCaseStudy() {
                 </p>
               </div>
 
-              <div className="mt-12 grid gap-px overflow-hidden bg-white/20 md:grid-cols-3">
-                {[
-                  "Good food today. More room tomorrow.",
-                  "Value that leaves space for what matters.",
-                  "Your choices create more than savings.",
-                ].map((message) => (
-                  <div
-                    key={message}
-                    className="flex min-h-72 items-end bg-[#102A43] p-8 text-[#F8F7F2]"
-                  >
-                    <p className="font-display text-3xl font-medium leading-tight tracking-[-0.045em]">
-                      {message}
-                    </p>
-                  </div>
-                ))}
+              <div className="mt-12 grid gap-4 md:grid-cols-12 md:gap-5">
+                {/* Feature placement — large, navy */}
+                <div className="flex min-h-[320px] flex-col justify-between bg-[#102A43] p-8 text-[#F8F7F2] md:col-span-7 md:min-h-[400px] md:p-11">
+                  <p className="text-[0.7rem] uppercase tracking-[0.18em] text-white/45">
+                    Care, Not Compromise
+                  </p>
+                  <p className="font-display mt-10 max-w-md text-3xl font-medium leading-[1.04] tracking-[-0.045em] md:text-[2.75rem]">
+                    Good food today. More room tomorrow.
+                  </p>
+                </div>
+
+                {/* Quieter counterpart — light, inverted */}
+                <div className="flex min-h-[320px] flex-col justify-between bg-[#E8E5DB] p-8 text-[#111111] md:col-span-5 md:min-h-[400px] md:p-11">
+                  <span aria-hidden="true" className="block h-px w-10 bg-[#111111]/25" />
+                  <p className="font-display mt-10 text-3xl font-medium leading-[1.04] tracking-[-0.045em] md:text-4xl">
+                    Value that leaves space for what matters.
+                  </p>
+                </div>
+
+                {/* Closing banner — full width, navy */}
+                <div className="flex min-h-[190px] flex-col justify-between gap-8 bg-[#102A43] p-8 text-[#F8F7F2] md:col-span-12 md:flex-row md:items-end md:p-11">
+                  <p className="font-display max-w-2xl text-3xl font-medium leading-[1.04] tracking-[-0.045em] md:text-[2.75rem]">
+                    Your choices create more than savings.
+                  </p>
+                  <p className="shrink-0 text-[0.7rem] uppercase tracking-[0.18em] text-white/45 md:pb-2 md:text-right">
+                    Care, Not Compromise
+                  </p>
+                </div>
               </div>
             </section>
 
