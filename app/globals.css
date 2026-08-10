@@ -32,12 +32,6 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* When the framer-motion custom cursor is active, hide the native cursor. */
-html.has-custom-cursor,
-html.has-custom-cursor * {
-  cursor: none !important;
-}
-
 body {
   margin: 0;
   background: var(--background);
