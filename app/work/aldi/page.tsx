@@ -117,71 +117,74 @@ export default function AldiCaseStudy() {
 
         <section
           id="challenge"
-          className="scroll-mt-24 grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]"
+          className="scroll-mt-24"
         >
-          <p className="text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
-            The Challenge
+          <div className="flex items-baseline justify-between gap-4 border-t border-[#111111]/15 pt-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#6B6B6B] md:text-sm">
+              The Challenge
+            </p>
+            <p className="text-xs uppercase tracking-[0.24em] tabular-nums text-[#9A9A93] md:text-sm">
+              02 <span className="text-[#C7C6BF]">/ 08</span>
+            </p>
+          </div>
+
+          <h2 className="font-display mt-14 max-w-[56rem] text-[2.4rem] font-medium leading-[0.98] tracking-[-0.055em] md:mt-20 md:text-[4rem]">
+            How could Aldi make value feel less transactional and more human?
+          </h2>
+
+          <p className="mt-10 max-w-2xl text-xl leading-[1.5] text-[#2E2E2B] md:mt-12 md:text-2xl">
+            Aldi has built strong trust around affordability. But price alone
+            is increasingly difficult to own as an emotional position. The
+            opportunity was not to change what Aldi offers, but to explore
+            what those savings represent in people&apos;s lives.
           </p>
 
-          <div>
-            <h2 className="font-display max-w-4xl text-4xl font-medium leading-[1.02] tracking-[-0.055em] md:text-6xl">
-              How could Aldi make value feel less transactional and more human?
-            </h2>
+          <div className="mx-auto mt-16 grid max-w-5xl gap-10 border-y border-[#111111]/15 py-10 text-center md:mt-24 md:grid-cols-[0.65fr_1.35fr] md:items-center md:gap-16 md:text-left">
+            <div className="flex flex-col items-center md:items-start">
+              <p className="font-display text-[4.5rem] font-medium leading-none tracking-[-0.075em] md:text-[7rem]">
+                78%
+              </p>
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#6B6B6B]">
+                of financially pressured shoppers are buying cheaper
+                groceries.
+              </p>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-[#8A8A84]">
+                Source: Kantar, 2024
+              </p>
+            </div>
 
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#6B6B6B]">
-              Aldi has built strong trust around affordability. But price alone
-              is increasingly difficult to own as an emotional position. The
-              opportunity was not to change what Aldi offers, but to explore
-              what those savings represent in people&apos;s lives.
-            </p>
-
-            <div className="mt-14 grid gap-10 border-y border-[#111111]/15 py-8 md:grid-cols-[0.65fr_1.35fr] md:items-end">
+            <div className="grid gap-8 text-left sm:grid-cols-[1fr_auto_1fr] sm:items-center">
               <div>
-                <p className="font-display text-7xl font-medium leading-none tracking-[-0.075em] md:text-8xl">
-                  78%
+                <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
+                  Functional value
                 </p>
-                <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#6B6B6B]">
-                  of financially pressured shoppers are buying cheaper
-                  groceries.
-                </p>
-                <p className="mt-3 text-xs uppercase tracking-[0.12em] text-[#8A8A84]">
-                  Source: Kantar, 2024
+                <p className="mt-4 leading-relaxed">
+                  Lower prices
+                  <br />
+                  Saving money
+                  <br />
+                  Everyday affordability
                 </p>
               </div>
 
-              <div className="grid gap-6 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                    Functional value
-                  </p>
-                  <p className="mt-4 leading-relaxed">
-                    Lower prices
-                    <br />
-                    Saving money
-                    <br />
-                    Everyday affordability
-                  </p>
-                </div>
+              <p
+                aria-hidden="true"
+                className="justify-self-center text-2xl text-[#8A8A84] sm:rotate-[-90deg]"
+              >
+                ↓
+              </p>
 
-                <p
-                  aria-hidden="true"
-                  className="text-2xl text-[#8A8A84] sm:rotate-[-90deg]"
-                >
-                  ↓
+              <div>
+                <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
+                  Emotional opportunity
                 </p>
-
-                <div>
-                  <p className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                    Emotional opportunity
-                  </p>
-                  <p className="mt-4 leading-relaxed">
-                    What savings protect
-                    <br />
-                    What savings enable
-                    <br />
-                    What savings make possible
-                  </p>
-                </div>
+                <p className="mt-4 leading-relaxed">
+                  What savings protect
+                  <br />
+                  What savings enable
+                  <br />
+                  What savings make possible
+                </p>
               </div>
             </div>
           </div>
