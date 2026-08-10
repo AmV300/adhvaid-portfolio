@@ -49,68 +49,67 @@ export default function AldiCaseStudy() {
       <CaseStudyNav items={navigation} />
 
       <article className="mx-auto max-w-7xl space-y-28 px-6 pb-28 pt-20 md:space-y-40 md:px-10 md:pb-40 md:pt-28">
-        <section
-          id="overview"
-          className="scroll-mt-24 grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]"
-        >
-          <p className="text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
-            Project Overview
-          </p>
+        <section id="overview" className="scroll-mt-24">
+          <div className="border-t border-[#111111]/15 pt-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#6B6B6B] md:text-sm">
+              Project Overview
+            </p>
+          </div>
 
-          <div>
-            <h2 className="font-display max-w-4xl text-[2.6rem] font-medium leading-[0.98] tracking-[-0.06em] md:text-7xl">
-              <span className="text-[#ABAAA3]">Making value feel like</span> care.
-            </h2>
+          <h2 className="font-display mt-12 max-w-5xl text-[3rem] font-medium leading-[0.93] tracking-[-0.06em] md:mt-20 md:text-[6rem]">
+            Making value feel like care.
+          </h2>
 
-            <p className="mt-8 max-w-2xl text-xl leading-[1.5] text-[#42423E]">
+          <div className="mt-12 grid gap-x-10 gap-y-8 md:mt-16 md:grid-cols-12">
+            <p className="text-xl leading-[1.5] text-[#2E2E2B] md:col-span-6 md:col-start-7 md:text-2xl">
               A brand strategy investigation that reframes Aldi&apos;s low
               prices around the care behind everyday savings.
             </p>
 
-            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[#7A7A74]">
+            <p className="max-w-xl text-sm leading-relaxed text-[#7A7A74] md:col-span-6 md:col-start-7">
               <span className="font-medium text-[#4F4F4A]">Approach:</span>{" "}
               desk research into shopper pressure, Aldi&apos;s public value
               positioning and category communication, followed by a
               speculative strategic hypothesis.
             </p>
-
-            <dl className="mt-14 grid border-y border-[#111111]/15 md:grid-cols-3">
-              <div className="py-6 md:pr-8">
-                <dt className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Role
-                </dt>
-                <dd className="mt-3 leading-relaxed">
-                  Brand Strategy
-                  <br />
-                  Consumer Insight
-                  <br />
-                  Campaign Development
-                </dd>
-              </div>
-
-              <div className="border-t border-[#111111]/15 py-6 md:border-l md:border-t-0 md:px-8">
-                <dt className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Challenge
-                </dt>
-                <dd className="mt-3 leading-relaxed">
-                  Reframing affordability into emotional value.
-                </dd>
-              </div>
-
-              <div className="border-t border-[#111111]/15 py-6 md:border-l md:border-t-0 md:pl-8">
-                <dt className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
-                  Deliverables
-                </dt>
-                <dd className="mt-3 leading-relaxed">
-                  Campaign Platform
-                  <br />
-                  Customer Experience
-                  <br />
-                  Film and Digital Concepts
-                </dd>
-              </div>
-            </dl>
           </div>
+
+          <dl className="mt-16 grid gap-y-9 border-t border-[#111111]/15 pt-9 md:mt-24 md:grid-cols-3 md:gap-x-12">
+            <div>
+              <dt className="text-xs uppercase tracking-[0.16em] text-[#8A8A84]">
+                Role
+              </dt>
+              <dd className="mt-4 text-[1.05rem] leading-relaxed text-[#2E2E2B]">
+                Brand Strategy
+                <br />
+                Consumer Insight
+                <br />
+                Campaign Development
+              </dd>
+            </div>
+
+            <div>
+              <dt className="text-xs uppercase tracking-[0.16em] text-[#8A8A84]">
+                Challenge
+              </dt>
+              <dd className="mt-4 max-w-xs text-[1.05rem] leading-relaxed text-[#2E2E2B]">
+                Reframing affordability into emotional value.
+              </dd>
+            </div>
+
+            <div>
+              <dt className="text-xs uppercase tracking-[0.16em] text-[#8A8A84]">
+                Deliverables
+              </dt>
+              <dd className="mt-4 text-[1.05rem] leading-relaxed text-[#2E2E2B]">
+                Campaign Platform
+                <br />
+                Customer Experience
+                <br />
+                Film and Digital Concepts
+              </dd>
+            </div>
+          </dl>
         </section>
 
         <section
@@ -122,14 +121,11 @@ export default function AldiCaseStudy() {
           </p>
 
           <div>
-            <h2 className="font-display max-w-4xl text-[2.4rem] font-medium leading-[1.0] tracking-[-0.055em] md:text-6xl">
-              <span className="text-[#ABAAA3]">
-                How could Aldi make value feel less transactional and
-              </span>{" "}
-              more human?
+            <h2 className="font-display max-w-4xl text-4xl font-medium leading-[1.02] tracking-[-0.055em] md:text-6xl">
+              How could Aldi make value feel less transactional and more human?
             </h2>
 
-            <p className="mt-8 max-w-2xl text-xl leading-[1.55] text-[#42423E]">
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#6B6B6B]">
               Aldi has built strong trust around affordability. But price alone
               is increasingly difficult to own as an emotional position. The
               opportunity was not to change what Aldi offers, but to explore
