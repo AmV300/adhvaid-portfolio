@@ -77,9 +77,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
               alt={project.imageAlt}
               fill
               sizes="(min-width: 768px) 58vw, 100vw"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018] motion-reduce:transition-none"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
             />
           </motion.div>
+
+          {/* Soft overlay that fades in on hover so the card feels responsive
+              before clicking. */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1E33]/35 via-[#0B1E33]/8 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 motion-reduce:transition-none"
+          />
         </div>
 
         <div
