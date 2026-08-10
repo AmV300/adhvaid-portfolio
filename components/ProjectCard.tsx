@@ -48,6 +48,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       <article className="grid items-stretch gap-8 md:grid-cols-12 md:gap-10">
         <div
+          data-cursor="view"
           className={`investigation-card-media relative aspect-[4/3] overflow-hidden bg-[#E9E8E3] md:col-span-7 ${
             project.imagePosition === "right"
               ? "md:order-2"
