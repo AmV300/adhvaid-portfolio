@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -12,6 +13,19 @@ type ProjectCardProps = {
 export function ProjectCard({ project }: ProjectCardProps) {
   const cardRef = useRef<HTMLAnchorElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const reduceMotion = useReducedMotion();
+
+  // Subtle parallax: the image drifts vertically at a slightly different rate
+  // than the surrounding text as the card passes through the viewport.
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduceMotion ? [0, 0] : [-18, 18],
+  );
 
   useEffect(() => {
     const card = cardRef.current;
@@ -55,13 +69,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
               : "md:order-1"
           }`}
         >
-          <Image
-            src={project.image}
-            alt={project.imageAlt}
-            fill
-            sizes="(min-width: 768px) 58vw, 100vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018] motion-reduce:transition-none"
-          />
+          <motion.div
+            className="absolute inset-x-0 -inset-y-6 will-change-transform"
+            style={{ y: imageY }}
+          >
+            <Image
+              src={project.image}
+              alt={project.imageAlt}
+              fill
+              sizes="(min-width: 768px) 58vw, 100vw"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018] motion-reduce:transition-none"
+            />
+          </motion.div>
         </div>
 
         <div
