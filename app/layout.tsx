@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = localFont({
@@ -58,9 +59,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

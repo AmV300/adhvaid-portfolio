@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import type { RefObject } from "react";
+import { getActiveLenis } from "@/lib/lenis";
 
 type ScrollChapterOptions = {
   chapters: number;
@@ -89,10 +90,18 @@ export function useScrollChapterKeys<T extends HTMLElement>(
             ? Math.max(0, sectionTop - viewportHeight)
             : sectionTop + chapter * viewportHeight;
 
-      window.scrollTo({
-        top: targetTop,
-        behavior: reducedMotion.matches ? "auto" : "smooth",
-      });
+      const lenis = getActiveLenis();
+
+      if (lenis) {
+        // Route through Lenis so its internal target stays in sync; a native
+        // scrollTo here would be undone on the next Lenis frame.
+        lenis.scrollTo(targetTop, { immediate: reducedMotion.matches });
+      } else {
+        window.scrollTo({
+          top: targetTop,
+          behavior: reducedMotion.matches ? "auto" : "smooth",
+        });
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);

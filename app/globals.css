@@ -13,8 +13,23 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Lenis owns smooth scrolling; native smooth-behavior would fight its
+   programmatic scrolling, so it is intentionally not set here. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 body {
