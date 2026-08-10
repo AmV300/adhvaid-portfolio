@@ -1,8 +1,55 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
+import { Fragment } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { useScrollChapterKeys } from "@/lib/useScrollChapterKeys";
 import { useEffect, useRef } from "react";
+
+// Word-by-word reveal for the hero headline. Each word fades and slides up
+// with a slight stagger on load. The surrounding <h1> keeps its scroll-driven
+// opacity/transform, so this composes with (and never breaks) the scroll
+// fade-out — the words settle at opacity 1 and the headline still fades as a
+// whole as you scroll past it.
+function HeadlineReveal({ text }: { text: string }) {
+  const reduce = useReducedMotion();
+
+  if (reduce) {
+    return <>{text}</>;
+  }
+
+  const words = text.split(" ");
+
+  return (
+    <motion.span
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.075, delayChildren: 0.12 } },
+      }}
+    >
+      {words.map((word, index) => (
+        <Fragment key={`${word}-${index}`}>
+          <motion.span
+            className="inline-block will-change-transform"
+            variants={{
+              hidden: { opacity: 0, y: "0.42em" },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+          >
+            {word}
+          </motion.span>
+          {index < words.length - 1 ? " " : ""}
+        </Fragment>
+      ))}
+    </motion.span>
+  );
+}
 
 function clamp(value: number) {
   return Math.min(1, Math.max(0, value));
@@ -316,7 +363,7 @@ export function HomeIntroduction() {
           </p>
 
           <h1 className="home-thought-primary font-display text-[clamp(2.55rem,12vw,3rem)] font-medium leading-[0.98] tracking-[-0.06em] sm:text-7xl md:text-8xl">
-            Every person carries a different world.
+            <HeadlineReveal text="Every person carries a different world." />
           </h1>
 
           <div className="mt-9 max-w-2xl">

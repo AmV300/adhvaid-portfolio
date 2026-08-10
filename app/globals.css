@@ -267,8 +267,8 @@ body {
 .home-thought-primary {
   opacity: var(--thought-main-opacity);
   transform: translate3d(0, var(--thought-main-y), 0);
-  animation: opening-thought-reveal 440ms
-    cubic-bezier(0.22, 1, 0.36, 1) 40ms backwards;
+  /* Entrance handled per-word by framer-motion (HeadlineReveal); the vars
+     above keep driving the scroll fade-out. */
 }
 
 .home-thought-supporting {
