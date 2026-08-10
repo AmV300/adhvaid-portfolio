@@ -58,11 +58,11 @@ export default function AldiCaseStudy() {
           </p>
 
           <div>
-            <h2 className="font-display max-w-4xl text-4xl font-medium leading-[1.02] tracking-[-0.055em] md:text-6xl">
-              Making value feel like care.
+            <h2 className="font-display max-w-4xl text-[2.6rem] font-medium leading-[0.98] tracking-[-0.06em] md:text-7xl">
+              <span className="text-[#ABAAA3]">Making value feel like</span> care.
             </h2>
 
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#6B6B6B]">
+            <p className="mt-8 max-w-2xl text-xl leading-[1.5] text-[#42423E]">
               A brand strategy investigation that reframes Aldi&apos;s low
               prices around the care behind everyday savings.
             </p>
@@ -122,11 +122,14 @@ export default function AldiCaseStudy() {
           </p>
 
           <div>
-            <h2 className="font-display max-w-4xl text-4xl font-medium leading-[1.02] tracking-[-0.055em] md:text-6xl">
-              How could Aldi make value feel less transactional and more human?
+            <h2 className="font-display max-w-4xl text-[2.4rem] font-medium leading-[1.0] tracking-[-0.055em] md:text-6xl">
+              <span className="text-[#ABAAA3]">
+                How could Aldi make value feel less transactional and
+              </span>{" "}
+              more human?
             </h2>
 
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#6B6B6B]">
+            <p className="mt-8 max-w-2xl text-xl leading-[1.55] text-[#42423E]">
               Aldi has built strong trust around affordability. But price alone
               is increasingly difficult to own as an emotional position. The
               opportunity was not to change what Aldi offers, but to explore
