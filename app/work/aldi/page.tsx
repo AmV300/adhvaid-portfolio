@@ -63,13 +63,13 @@ export default function AldiCaseStudy() {
             Making value feel like care.
           </h2>
 
-          <div className="mt-12 grid gap-x-10 gap-y-8 md:mt-16 md:grid-cols-12">
-            <p className="text-xl leading-[1.5] text-[#2E2E2B] md:col-span-6 md:col-start-7 md:text-2xl">
+          <div className="mt-12 max-w-2xl md:mt-16">
+            <p className="text-xl leading-[1.5] text-[#2E2E2B] md:text-2xl">
               A brand strategy investigation that reframes Aldi&apos;s low
               prices around the care behind everyday savings.
             </p>
 
-            <p className="max-w-xl text-sm leading-relaxed text-[#7A7A74] md:col-span-6 md:col-start-7">
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-[#7A7A74]">
               <span className="font-medium text-[#4F4F4A]">Approach:</span>{" "}
               desk research into shopper pressure, Aldi&apos;s public value
               positioning and category communication, followed by a
@@ -77,12 +77,12 @@ export default function AldiCaseStudy() {
             </p>
           </div>
 
-          <dl className="mt-16 grid gap-y-10 border-t border-[#111111]/15 pt-10 md:mt-28 md:grid-cols-3 md:gap-x-16">
-            <div>
+          <dl className="mt-16 grid border-t border-[#111111]/15 md:mt-24 md:grid-cols-3">
+            <div className="pt-8 md:pr-10">
               <dt className="text-xs uppercase tracking-[0.18em] text-[#8A8A84]">
                 Role
               </dt>
-              <dd className="mt-5 text-[1.15rem] leading-[1.5] text-[#2E2E2B]">
+              <dd className="mt-5 text-[1.1rem] leading-[1.5] text-[#2E2E2B]">
                 Brand Strategy
                 <br />
                 Consumer Insight
@@ -91,20 +91,20 @@ export default function AldiCaseStudy() {
               </dd>
             </div>
 
-            <div>
+            <div className="border-t border-[#111111]/12 pt-8 md:border-l md:border-t-0 md:px-10">
               <dt className="text-xs uppercase tracking-[0.18em] text-[#8A8A84]">
                 Challenge
               </dt>
-              <dd className="mt-5 max-w-xs text-[1.15rem] leading-[1.5] text-[#2E2E2B]">
+              <dd className="mt-5 max-w-xs text-[1.1rem] leading-[1.5] text-[#2E2E2B]">
                 Reframing affordability into emotional value.
               </dd>
             </div>
 
-            <div>
+            <div className="border-t border-[#111111]/12 pt-8 md:border-l md:border-t-0 md:pl-10">
               <dt className="text-xs uppercase tracking-[0.18em] text-[#8A8A84]">
                 Deliverables
               </dt>
-              <dd className="mt-5 text-[1.15rem] leading-[1.5] text-[#2E2E2B]">
+              <dd className="mt-5 text-[1.1rem] leading-[1.5] text-[#2E2E2B]">
                 Campaign Platform
                 <br />
                 Customer Experience
