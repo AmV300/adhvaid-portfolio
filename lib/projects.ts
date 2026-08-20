@@ -39,4 +39,17 @@ export const projects: Project[] = [
     imageAlt: "A commuter walking beside a city bridge",
     imagePosition: "right",
   },
+  {
+    number: "03",
+    title: "Can heritage feel desirable again?",
+    client: "Thorntons",
+    type: "Brand Repositioning · Visual Identity",
+    question: "How can heritage become an advantage again?",
+    description:
+      "A speculative rebrand repositioning a familiar British chocolate name around contemporary craft, cocoa and gifting.",
+    href: "/work/thorntons",
+    image: "/images/thorntons/gift-box-dark.jpg",
+    imageAlt: "An open chocolate gift box in deep red light",
+    imagePosition: "left",
+  },
 ];
