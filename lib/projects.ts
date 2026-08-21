@@ -48,8 +48,8 @@ export const projects: Project[] = [
     description:
       "A speculative rebrand repositioning a familiar British chocolate name around contemporary craft, cocoa and gifting.",
     href: "/work/thorntons",
-    image: "/images/thorntons/gift-box-dark.jpg",
-    imageAlt: "An open chocolate gift box in deep red light",
+    image: "/images/thorntons/gift-box-open.png",
+    imageAlt: "Open box of assorted dark chocolates dusted with cocoa",
     imagePosition: "left",
   },
 ];
