@@ -283,15 +283,15 @@ export function ThorntonsExperience() {
           <div className="thorntons-workbench">
             <article>
               <span>01 / Discover</span><h3>Choose</h3><p>Explore cocoa, flavour notes and inclusions.</p>
-              <Image src="/images/thorntons/cocoa-texture.jpg" fill sizes="70vw" alt="Cocoa and chocolate texture" />
+              <Image src="/images/thorntons/atelier-discover.png" fill sizes="70vw" alt="Embossed dark chocolate bar surrounded by cocoa nibs and hazelnuts" />
             </article>
             <article>
               <span>02 / Make</span><h3>Temper</h3><p>Learn the movement, temperature and patience behind the finish.</p>
-              <Image src="/images/thorntons/workshop.jpg" fill sizes="70vw" alt="Chocolate-making workshop" />
+              <Image src="/images/thorntons/atelier-temper.png" fill sizes="70vw" alt="Chocolatier tempering melted chocolate on a marble slab" />
             </article>
             <article>
               <span>03 / Personalise</span><h3>Finish</h3><p>Create the bar, its label and the moment it is given.</p>
-              <Image src="/images/thorntons/box-mockup.png" fill sizes="70vw" alt="Original Thorntons box mockup held in two hands" />
+              <Image src="/images/thorntons/atelier-finish.png" fill sizes="70vw" alt="Hands holding a ribbon-tied Thorntons gift box" />
             </article>
           </div>
         </div>
