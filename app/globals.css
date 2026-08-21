@@ -56,8 +56,7 @@ body {
 }
 
 .thorntons-page .thorntons-section-label,
-.thorntons-kicker,
-.thorntons-scroll-note {
+.thorntons-kicker {
   font-family: var(--font-body);
   font-size: 0.7rem;
   letter-spacing: 0.22em;
@@ -139,21 +138,6 @@ body {
   animation: thorntons-mark-resolve 2.2s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
 }
 
-.thorntons-hero-tagline {
-  display: block;
-  width: min(48rem, 64%);
-  height: auto;
-  margin: clamp(0.5rem, 1.4vw, 1.25rem) auto 0;
-  opacity: 0;
-  filter: brightness(0) invert(92%) sepia(11%) saturate(350%);
-  animation: thorntons-tagline-resolve 1.4s ease-out 1.75s forwards;
-}
-
-@keyframes thorntons-tagline-resolve {
-  from { opacity: 0; transform: translateY(0.5rem); }
-  to { opacity: 0.62; transform: translateY(0); }
-}
-
 @keyframes thorntons-mark-resolve {
   0% { opacity: 0; transform: scale(1.12); filter: brightness(0) invert(92%) sepia(11%) saturate(350%) blur(15px); }
   100% { opacity: 1; transform: scale(1); filter: brightness(0) invert(92%) sepia(11%) saturate(350%) blur(0); }
@@ -185,14 +169,6 @@ body {
   line-height: 1.6;
   text-transform: uppercase;
   letter-spacing: 0.13em;
-}
-
-.thorntons-scroll-note {
-  position: absolute;
-  right: clamp(1.5rem, 4vw, 5rem);
-  top: 50%;
-  color: rgb(237 229 221 / 0.4);
-  writing-mode: vertical-rl;
 }
 
 .thorntons-strategy {
@@ -480,10 +456,8 @@ body {
 @media (max-width: 800px) {
   .thorntons-hero { padding-top: 6.5rem; }
   .thorntons-hero-mark-wrap { top: 39%; width: 105vw; }
-  .thorntons-hero-tagline { width: 72%; margin-top: 0.5rem; }
   .thorntons-hero-copy { display: block; padding-top: 58svh; }
   .thorntons-hero-copy p { margin-top: 1.5rem; }
-  .thorntons-scroll-note { display: none; }
   .thorntons-strategy-sticky { display: block; }
   .thorntons-year-block { position: absolute; z-index: 2; inset: 0 0 auto; display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 1rem; padding: 5.5rem 1.5rem 1.5rem; border: 0; }
   .thorntons-year-block p { grid-column: 1 / -1; }
@@ -530,7 +504,6 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .thorntons-hero-mark { opacity: 1; transform: none; filter: brightness(0) invert(92%) sepia(11%) saturate(350%); animation: none; }
-  .thorntons-hero-tagline { opacity: 0.62; transform: none; animation: none; }
   .thorntons-page [data-scroll-progress] { --progress: 0.72 !important; }
   .thorntons-strategy { height: auto; }
   .thorntons-strategy-sticky { position: relative; display: block; height: auto; }
