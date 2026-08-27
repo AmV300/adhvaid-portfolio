@@ -11,19 +11,11 @@ function clamp(value: number) {
 
 function CocoaMark({ className = "" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 160 210"
-      className={className}
+    <span
+      className={`thorntons-cocoa-mark ${className}`}
       role="img"
-      aria-label="Simplified cocoa pod symbol"
-    >
-      <path className="thorntons-pod-line" d="M78 17C41 44 25 87 35 130c9 38 34 61 48 67 16-8 42-35 47-76 6-45-17-84-52-104Z" />
-      <path className="thorntons-pod-line thorntons-pod-line--late" d="M78 19c14 29 18 59 11 88-7 31-7 60-4 87M78 19C59 50 55 83 63 111c8 29 13 55 20 83" />
-      {[61, 86, 112, 138].map((cy) => (
-        <ellipse key={cy} className="thorntons-pod-seed" cx="78" cy={cy} rx="11" ry="7" />
-      ))}
-      <path className="thorntons-pod-line thorntons-pod-line--late" d="M86 23c28-13 49-5 60 2-22 5-32 20-37 38" />
-    </svg>
+      aria-label="Thorntons cocoa pod mark"
+    />
   );
 }
 
@@ -84,11 +76,20 @@ export function ThorntonsExperience() {
             alt="Thorntons wordmark with cocoa pod symbol"
             className="thorntons-hero-mark"
           />
+          <Image
+            src="/images/thorntons/thorntons-tagline.png"
+            width={2400}
+            height={189}
+            priority
+            alt="Chocolate Heaven since 1911"
+            className="thorntons-hero-tagline"
+          />
         </div>
         <div className="thorntons-hero-copy">
           <h1 id="thorntons-title">Can heritage feel desirable again?</h1>
           <p>Brand repositioning · Visual identity · Brand experience</p>
         </div>
+        <p className="thorntons-scroll-note">Scroll to unwrap the thinking</p>
       </section>
 
       <section id="problem" className="thorntons-strategy" data-scroll-progress>
@@ -198,14 +199,52 @@ export function ThorntonsExperience() {
           <p>A familiar name, given a more crafted expression.</p>
         </div>
         <div className="thorntons-symbol-grid">
-          <div>
+          <div className="thorntons-symbol-copy">
             <p className="thorntons-section-label">The cocoa signature</p>
             <h3>From ingredient to imprint.</h3>
             <p>The symbol reconnects the finished chocolate with where its character begins.</p>
           </div>
           <div className="thorntons-symbol-stage">
             <CocoaMark className="thorntons-cocoa-svg" />
-            <span>Engraved</span><span>Embossed</span><span>Stamped</span>
+            <p className="thorntons-symbol-note">One signature, shaped by the material it meets.</p>
+            <div className="thorntons-application-grid">
+              <article className="thorntons-application">
+                <div className="thorntons-application-surface thorntons-application-surface--engraved">
+                  <Image
+                    src="/images/thorntons/cocoa-engraved.png"
+                    fill
+                    sizes="(max-width: 800px) calc(100vw - 3rem), 24vw"
+                    alt="Cocoa pod mark engraved into dark chocolate"
+                  />
+                </div>
+                <h4>Engraved</h4>
+                <p>Recessed into dark chocolate.</p>
+              </article>
+              <article className="thorntons-application">
+                <div className="thorntons-application-surface thorntons-application-surface--embossed">
+                  <Image
+                    src="/images/thorntons/cocoa-embossed.png"
+                    fill
+                    sizes="(max-width: 800px) calc(100vw - 3rem), 24vw"
+                    alt="Cocoa pod mark embossed into warm cream paper"
+                  />
+                </div>
+                <h4>Embossed</h4>
+                <p>Pressed into warm cream packaging.</p>
+              </article>
+              <article className="thorntons-application">
+                <div className="thorntons-application-surface thorntons-application-surface--stamped">
+                  <Image
+                    src="/images/thorntons/cocoa-stamped.png"
+                    fill
+                    sizes="(max-width: 800px) calc(100vw - 3rem), 24vw"
+                    alt="Cocoa pod mark stamped in brown ink on uncoated paper"
+                  />
+                </div>
+                <h4>Stamped</h4>
+                <p>Printed on an uncoated wrapper.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -224,21 +263,51 @@ export function ThorntonsExperience() {
       <section id="packaging" className="thorntons-packaging" data-scroll-progress>
         <div className="thorntons-packaging-copy">
           <p className="thorntons-section-label">Packaging system</p>
-          <h2>One identity.<br />Different expressions of chocolate.</h2>
+          <h2>One identity.<br />Different<br /><span>expressions of</span><br />chocolate.</h2>
           <p>A proposed range architecture turns the original mockups into a coherent product family.</p>
         </div>
         <div className="thorntons-pack-stack" aria-label="Concept packaging range">
           <article className="thorntons-pack thorntons-pack--dark">
-            <CocoaMark />
-            <span>Thorntons</span><strong>70% Dark</strong><small>Single origin · Ecuador</small>
+            <div className="thorntons-pack-brand">
+              <CocoaMark />
+              <span className="thorntons-pack-name">Thorntons</span>
+            </div>
+            <div className="thorntons-pack-product">
+              <span>Origins</span>
+              <strong>70%<br />Dark</strong>
+            </div>
+            <div className="thorntons-pack-info">
+              <span>Single origin</span>
+              <small>Ecuador · 90g</small>
+            </div>
           </article>
           <article className="thorntons-pack thorntons-pack--caramel">
-            <CocoaMark />
-            <span>Thorntons</span><strong>Sea Salt Caramel</strong><small>Milk chocolate · 36% cocoa</small>
+            <div className="thorntons-pack-brand">
+              <CocoaMark />
+              <span className="thorntons-pack-name">Thorntons</span>
+            </div>
+            <div className="thorntons-pack-product">
+              <span>Indulgence</span>
+              <strong>Sea Salt<br />Caramel</strong>
+            </div>
+            <div className="thorntons-pack-info">
+              <span>Milk chocolate</span>
+              <small>36% cocoa · 90g</small>
+            </div>
           </article>
           <article className="thorntons-pack thorntons-pack--signature">
-            <CocoaMark />
-            <span>Thorntons</span><strong>Signature Collection</strong><small>24 chocolates</small>
+            <div className="thorntons-pack-brand">
+              <CocoaMark />
+              <span className="thorntons-pack-name">Thorntons</span>
+            </div>
+            <div className="thorntons-pack-product">
+              <span>Gifting</span>
+              <strong>Signature<br />Collection</strong>
+            </div>
+            <div className="thorntons-pack-info">
+              <span>Assorted chocolates</span>
+              <small>24 pieces · 290g</small>
+            </div>
           </article>
         </div>
       </section>
@@ -250,7 +319,7 @@ export function ThorntonsExperience() {
           <p>The brand becomes physical in the small pause before a box is opened.</p>
         </div>
         <div className="thorntons-gift-stage" aria-label="Thorntons gift box opening">
-          <div className="thorntons-gift-lid"><span>Thorntons</span><CocoaMark /></div>
+          <div className="thorntons-gift-lid"><span className="thorntons-gift-name">Thorntons</span><CocoaMark /></div>
           <div className="thorntons-gift-base">
             {Array.from({ length: 12 }).map((_, index) => <i key={index} />)}
           </div>
@@ -274,15 +343,15 @@ export function ThorntonsExperience() {
           <div className="thorntons-workbench">
             <article>
               <span>01 / Discover</span><h3>Choose</h3><p>Explore cocoa, flavour notes and inclusions.</p>
-              <Image src="/images/thorntons/atelier-discover.png" fill sizes="70vw" alt="Embossed dark chocolate bar surrounded by cocoa nibs and hazelnuts" />
+              <Image src="/images/thorntons/cocoa-texture.jpg" fill sizes="70vw" alt="Cocoa and chocolate texture" />
             </article>
             <article>
               <span>02 / Make</span><h3>Temper</h3><p>Learn the movement, temperature and patience behind the finish.</p>
-              <Image src="/images/thorntons/atelier-temper.png" fill sizes="70vw" alt="Chocolatier tempering melted chocolate on a marble slab" />
+              <Image src="/images/thorntons/workshop.jpg" fill sizes="70vw" alt="Chocolate-making workshop" />
             </article>
             <article>
               <span>03 / Personalise</span><h3>Finish</h3><p>Create the bar, its label and the moment it is given.</p>
-              <Image src="/images/thorntons/atelier-finish.png" fill sizes="70vw" alt="Hands holding a ribbon-tied Thorntons gift box" />
+              <Image src="/images/thorntons/box-mockup.png" fill sizes="70vw" alt="Original Thorntons box mockup held in two hands" />
             </article>
           </div>
         </div>
@@ -302,7 +371,7 @@ export function ThorntonsExperience() {
       </section>
 
       <section className="thorntons-finale">
-        <Image src="/images/thorntons/gift-box-open.png" fill sizes="100vw" alt="Open box of assorted dark chocolates dusted with cocoa" />
+        <Image src="/images/thorntons/gift-box-dark.jpg" fill sizes="100vw" alt="Open chocolate gift box in deep red light" />
         <div className="thorntons-finale-shade" />
         <div>
           <p>Thorntons / Speculative rebrand</p>

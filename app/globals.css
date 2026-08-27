@@ -56,7 +56,8 @@ body {
 }
 
 .thorntons-page .thorntons-section-label,
-.thorntons-kicker {
+.thorntons-kicker,
+.thorntons-scroll-note {
   font-family: var(--font-body);
   font-size: 0.7rem;
   letter-spacing: 0.22em;
@@ -66,7 +67,8 @@ body {
 
 .thorntons-page h1,
 .thorntons-page h2,
-.thorntons-page h3 {
+.thorntons-page h3,
+.thorntons-page h4 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
 }
@@ -138,6 +140,21 @@ body {
   animation: thorntons-mark-resolve 2.2s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
 }
 
+.thorntons-hero-tagline {
+  display: block;
+  width: min(48rem, 64%);
+  height: auto;
+  margin: clamp(-1.7rem, -2vw, -0.65rem) auto 0;
+  opacity: 0;
+  filter: brightness(0) invert(92%) sepia(11%) saturate(350%);
+  animation: thorntons-tagline-resolve 1.4s ease-out 1.75s forwards;
+}
+
+@keyframes thorntons-tagline-resolve {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to { opacity: 0.62; transform: translateY(0); }
+}
+
 @keyframes thorntons-mark-resolve {
   0% { opacity: 0; transform: scale(1.12); filter: brightness(0) invert(92%) sepia(11%) saturate(350%) blur(15px); }
   100% { opacity: 1; transform: scale(1); filter: brightness(0) invert(92%) sepia(11%) saturate(350%) blur(0); }
@@ -169,6 +186,14 @@ body {
   line-height: 1.6;
   text-transform: uppercase;
   letter-spacing: 0.13em;
+}
+
+.thorntons-scroll-note {
+  position: absolute;
+  right: clamp(1.5rem, 4vw, 5rem);
+  top: 50%;
+  color: rgb(237 229 221 / 0.4);
+  writing-mode: vertical-rl;
 }
 
 .thorntons-strategy {
@@ -367,15 +392,20 @@ body {
 .thorntons-logo-lockup > img:first-child { width: 100%; height: auto; }
 .thorntons-identity-tagline { width: min(46rem, 62%); height: auto; margin-top: clamp(-1.6rem, -2vw, -0.5rem); opacity: 0.58; }
 .thorntons-logo-stage p { margin-top: 2rem; color: rgb(46 28 25 / 0.55); font-size: 0.72rem; letter-spacing: 0.15em; text-align: center; text-transform: uppercase; }
-.thorntons-symbol-grid { display: grid; align-items: center; gap: 4rem; min-height: 90svh; grid-template-columns: 0.8fr 1.2fr; border-top: 1px solid rgb(46 28 25 / 0.16); }
+.thorntons-symbol-grid { display: grid; align-items: start; gap: clamp(4rem, 7vw, 8rem); min-height: 100svh; padding-block: clamp(7rem, 10vw, 10rem); grid-template-columns: minmax(17rem, 0.7fr) minmax(0, 1.3fr); border-top: 1px solid rgb(46 28 25 / 0.16); }
+.thorntons-symbol-copy { position: sticky; top: 20svh; }
 .thorntons-symbol-grid h3 { margin-top: 1rem; font-size: clamp(2.5rem, 5vw, 5.6rem); line-height: 0.95; letter-spacing: -0.05em; }
-.thorntons-symbol-grid > div:first-child > p:last-child { max-width: 28rem; margin-top: 1.75rem; color: rgb(46 28 25 / 0.6); line-height: 1.65; }
-.thorntons-symbol-stage { display: grid; grid-template-columns: repeat(3, 1fr); align-items: end; justify-items: center; gap: 1rem; }
-.thorntons-cocoa-svg { grid-column: 1 / -1; width: min(22rem, 65%); }
-.thorntons-symbol-stage span { width: 100%; padding-top: 1rem; border-top: 1px solid rgb(46 28 25 / 0.18); font-size: 0.62rem; letter-spacing: 0.18em; text-align: center; text-transform: uppercase; }
-.thorntons-pod-line { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 800; stroke-dashoffset: calc(800 - var(--progress) * 1200); }
-.thorntons-pod-line--late { stroke-dashoffset: calc(800 - max(0, var(--progress) - 0.14) * 1450); }
-.thorntons-pod-seed { fill: currentColor; opacity: calc(clamp(0, (var(--progress) - 0.22) * 4, 1)); }
+.thorntons-symbol-copy > p:last-child { max-width: 28rem; margin-top: 1.75rem; color: rgb(46 28 25 / 0.6); line-height: 1.65; }
+.thorntons-symbol-stage { display: flex; min-width: 0; flex-direction: column; align-items: center; }
+.thorntons-cocoa-mark { display: block; flex: none; aspect-ratio: 1; background: currentColor; -webkit-mask: url("/images/thorntons/cocoa-pod-mark.png?v=2") center / contain no-repeat; mask: url("/images/thorntons/cocoa-pod-mark.png?v=2") center / contain no-repeat; }
+.thorntons-cocoa-svg { width: min(19rem, 50%); color: var(--cocoa); }
+.thorntons-symbol-note { margin-top: 1rem; color: rgb(46 28 25 / 0.5); font-size: 0.67rem; letter-spacing: 0.16em; text-align: center; text-transform: uppercase; }
+.thorntons-application-grid { display: grid; width: 100%; gap: clamp(0.85rem, 1.4vw, 1.4rem); margin-top: clamp(3rem, 5vw, 5rem); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.thorntons-application { min-width: 0; }
+.thorntons-application-surface { position: relative; overflow: hidden; aspect-ratio: 1; box-shadow: 0 1.4rem 3.5rem rgb(46 28 25 / 0.12); }
+.thorntons-application-surface > img { object-fit: cover; }
+.thorntons-application h4 { margin-top: 1.2rem; font-size: clamp(1.6rem, 2.2vw, 2.5rem); font-weight: 400; letter-spacing: -0.04em; line-height: 1; }
+.thorntons-application > p { margin-top: 0.55rem; color: rgb(46 28 25 / 0.56); font-size: 0.82rem; line-height: 1.5; }
 
 .thorntons-palette { position: relative; display: grid; min-height: 100svh; grid-template-columns: 1fr 1fr; }
 .thorntons-palette-panel { display: flex; flex-direction: column; justify-content: space-between; padding: clamp(2rem, 5vw, 5rem); }
@@ -389,17 +419,27 @@ body {
 .thorntons-packaging { position: relative; display: grid; min-height: 150svh; grid-template-columns: 0.78fr 1.22fr; background: #160d0c; color: var(--cream); }
 .thorntons-packaging-copy { position: sticky; top: 0; display: flex; height: 100svh; flex-direction: column; justify-content: center; padding: clamp(2rem, 7vw, 8rem); }
 .thorntons-packaging-copy .thorntons-section-label { color: rgb(237 229 221 / 0.5); }
-.thorntons-packaging-copy h2 { margin-top: 1rem; font-size: clamp(3rem, 5.5vw, 6.5rem); line-height: 0.94; letter-spacing: -0.055em; }
+.thorntons-packaging-copy h2 { margin-top: 1rem; font-size: clamp(3rem, 5.1vw, 6.5rem); line-height: 0.94; letter-spacing: -0.055em; }
+.thorntons-packaging-copy h2 span { white-space: nowrap; }
 .thorntons-packaging-copy > p:last-child { max-width: 27rem; margin-top: 2rem; color: rgb(237 229 221 / 0.58); line-height: 1.65; }
 .thorntons-pack-stack { position: sticky; top: 0; height: 100svh; perspective: 1500px; }
-.thorntons-pack { position: absolute; left: 50%; top: 50%; display: flex; width: min(24rem, 54vw); aspect-ratio: 0.68; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; border: 1px solid rgb(237 229 221 / 0.24); box-shadow: 0 2.5rem 6rem rgb(0 0 0 / 0.45); text-align: center; transform-style: preserve-3d; }
-.thorntons-pack svg { width: 4.2rem; margin-bottom: 2rem; }
-.thorntons-pack span { font: italic 2.3rem/1 Georgia, serif; }
-.thorntons-pack strong { margin-top: auto; font: 2rem/1 Georgia, serif; font-weight: 400; text-transform: uppercase; }
-.thorntons-pack small { margin-top: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
-.thorntons-pack--dark { background: #201211; transform: translate(-82%, -44%) rotate(-6deg) translateZ(4rem) translateX(calc(var(--progress) * -8rem)); }
-.thorntons-pack--caramel { color: var(--cocoa); background: #c39869; transform: translate(-39%, -54%) rotate(4deg) translateZ(1rem) translateX(calc(var(--progress) * 1rem)); }
-.thorntons-pack--signature { color: var(--cocoa); background: var(--cream); transform: translate(-55%, -48%) rotate(-1deg) translateZ(7rem) translateX(calc(var(--progress) * 8rem)); }
+.thorntons-pack { position: absolute; left: 50%; top: 50%; display: grid; width: min(15.5rem, 25vw); aspect-ratio: 0.68; grid-template-rows: 30% 1fr auto; padding: clamp(1.25rem, 1.8vw, 1.7rem); overflow: hidden; border: 1px solid rgb(237 229 221 / 0.24); box-shadow: 0 2.5rem 6rem rgb(0 0 0 / 0.45); text-align: center; transform-style: preserve-3d; transition: transform 120ms linear; }
+.thorntons-pack::before { content: ""; position: absolute; inset: 0; opacity: 0.18; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.46'/%3E%3C/svg%3E"); background-size: 160px; mix-blend-mode: soft-light; pointer-events: none; }
+.thorntons-pack > * { position: relative; z-index: 1; }
+.thorntons-pack-brand { display: flex; flex-direction: column; align-items: center; }
+.thorntons-pack .thorntons-cocoa-mark { width: clamp(2.8rem, 3.6vw, 3.8rem); margin-bottom: 0.8rem; }
+.thorntons-pack-name { font: italic clamp(1.65rem, 2.3vw, 2.15rem)/1 Georgia, serif; }
+.thorntons-pack-product { align-self: center; }
+.thorntons-pack-product > span { display: block; margin-bottom: 0.75rem; font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; }
+.thorntons-pack strong { display: block; font: clamp(1.5rem, 2.2vw, 2.05rem)/0.96 Georgia, serif; font-weight: 400; letter-spacing: -0.025em; text-transform: uppercase; }
+.thorntons-pack-info { width: 100%; padding-top: 1rem; border-top: 1px solid currentColor; }
+.thorntons-pack-info > span,
+.thorntons-pack small { display: block; font-size: 0.56rem; line-height: 1.4; letter-spacing: 0.13em; text-transform: uppercase; }
+.thorntons-pack small { margin-top: 0.35rem; opacity: 0.64; }
+.thorntons-pack--dark { z-index: 1; background: radial-gradient(circle at 30% 12%, #3a211d, transparent 38%), #201211; transform: translate(calc(-145% - var(--progress) * 4%), -49%) rotate(-2.5deg) translateZ(2rem); }
+.thorntons-pack--caramel { z-index: 3; color: var(--cocoa); background: linear-gradient(115deg, rgb(255 255 255 / 0.12), transparent 30%), #c39869; transform: translate(-50%, -52%) rotate(1.5deg) translateZ(4rem); }
+.thorntons-pack--signature { z-index: 2; color: var(--cocoa); background: linear-gradient(135deg, #f5eee8, var(--cream) 58%, #d9cdc3); transform: translate(calc(45% + var(--progress) * 4%), -48%) rotate(2.5deg) translateZ(3rem); }
+.thorntons-pack--signature::before { opacity: 0.1; }
 
 .thorntons-gifting { display: grid; min-height: 130svh; grid-template-columns: 0.75fr 1.25fr; align-items: center; padding: clamp(4rem, 9vw, 10rem); background: var(--paper); }
 .thorntons-gift-copy h2 { max-width: 35rem; margin-top: 1rem; font-size: clamp(3rem, 6vw, 6.8rem); line-height: 0.93; letter-spacing: -0.055em; }
@@ -410,8 +450,8 @@ body {
 .thorntons-gift-base { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; padding: 2rem; border: 1.3rem solid #241411; background: #b9986a; box-shadow: 0 3rem 5rem rgb(46 28 25 / 0.2); }
 .thorntons-gift-base i { display: block; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #7b4d3d, #2b1512 70%); box-shadow: inset 0 0 0 0.3rem rgb(237 229 221 / 0.12); }
 .thorntons-gift-lid { z-index: 2; display: flex; align-items: center; justify-content: center; gap: 1.5rem; background: var(--cocoa); color: var(--cream); box-shadow: 0 3rem 5rem rgb(46 28 25 / 0.25); transform: translate(-50%, calc(-50% - var(--progress) * 25rem)) rotateX(calc(var(--progress) * 10deg)); }
-.thorntons-gift-lid span { font: italic clamp(2.5rem, 6vw, 5rem)/1 Georgia, serif; }
-.thorntons-gift-lid svg { width: 4rem; }
+.thorntons-gift-name { font: italic clamp(2.5rem, 6vw, 5rem)/1 Georgia, serif; }
+.thorntons-gift-lid .thorntons-cocoa-mark { width: 4rem; }
 
 .thorntons-voice { padding: clamp(7rem, 13vw, 13rem) clamp(1.5rem, 8vw, 8rem); background: var(--cream); }
 .thorntons-voice > .thorntons-section-label { margin-bottom: 5rem; color: rgb(46 28 25 / 0.48); }
@@ -456,8 +496,10 @@ body {
 @media (max-width: 800px) {
   .thorntons-hero { padding-top: 6.5rem; }
   .thorntons-hero-mark-wrap { top: 39%; width: 105vw; }
+  .thorntons-hero-tagline { width: 72%; margin-top: -0.5rem; }
   .thorntons-hero-copy { display: block; padding-top: 58svh; }
   .thorntons-hero-copy p { margin-top: 1.5rem; }
+  .thorntons-scroll-note { display: none; }
   .thorntons-strategy-sticky { display: block; }
   .thorntons-year-block { position: absolute; z-index: 2; inset: 0 0 auto; display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 1rem; padding: 5.5rem 1.5rem 1.5rem; border: 0; }
   .thorntons-year-block p { grid-column: 1 / -1; }
@@ -477,16 +519,23 @@ body {
   .thorntons-collage-b { left: -8%; width: 74vw; height: 96vw; }
   .thorntons-collage-c { right: 3%; width: 62vw; height: 82vw; }
   .thorntons-identity { padding-inline: 1.5rem; }
-  .thorntons-symbol-grid { grid-template-columns: 1fr; padding-block: 5rem; }
+  .thorntons-symbol-grid { min-height: auto; grid-template-columns: 1fr; padding-block: 5rem; }
+  .thorntons-symbol-copy { position: relative; top: auto; }
+  .thorntons-cocoa-svg { width: min(16rem, 58vw); }
+  .thorntons-application-grid { gap: 3.5rem; grid-template-columns: 1fr; }
+  .thorntons-application-surface { width: 100%; }
   .thorntons-palette { min-height: 120svh; grid-template-columns: 1fr; }
   .thorntons-gold-rule { left: 0; top: 50%; width: 100%; height: 1px; }
   .thorntons-packaging { display: block; min-height: 180svh; }
   .thorntons-packaging-copy { position: relative; height: auto; min-height: 75svh; padding: 6rem 1.5rem; }
-  .thorntons-pack-stack { height: 100svh; }
-  .thorntons-pack { width: min(19rem, 72vw); }
-  .thorntons-pack--dark { transform: translate(-64%, -38%) rotate(-6deg) translateX(calc(var(--progress) * -2rem)); }
-  .thorntons-pack--caramel { transform: translate(-38%, -57%) rotate(5deg); }
-  .thorntons-pack--signature { transform: translate(-50%, -48%) translateX(calc(var(--progress) * 2rem)); }
+  .thorntons-pack-stack { height: 100svh; min-height: 44rem; }
+  .thorntons-pack { width: min(13.5rem, 55vw); padding: 1.25rem; }
+  .thorntons-pack .thorntons-cocoa-mark { width: 2.8rem; margin-bottom: 0.55rem; }
+  .thorntons-pack-name { font-size: 1.55rem; }
+  .thorntons-pack strong { font-size: 1.35rem; }
+  .thorntons-pack--dark { transform: translate(-78%, -118%) rotate(-3deg); }
+  .thorntons-pack--caramel { transform: translate(-50%, -36%) rotate(1deg); }
+  .thorntons-pack--signature { transform: translate(-22%, 46%) rotate(3deg); }
   .thorntons-gifting { display: block; padding: 6rem 1.5rem; }
   .thorntons-gift-stage { height: 34rem; margin-top: 3rem; }
   .thorntons-gift-base, .thorntons-gift-lid { width: min(28rem, 88vw); }
@@ -504,6 +553,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .thorntons-hero-mark { opacity: 1; transform: none; filter: brightness(0) invert(92%) sepia(11%) saturate(350%); animation: none; }
+  .thorntons-hero-tagline { opacity: 0.62; transform: none; animation: none; }
   .thorntons-page [data-scroll-progress] { --progress: 0.72 !important; }
   .thorntons-strategy { height: auto; }
   .thorntons-strategy-sticky { position: relative; display: block; height: auto; }
