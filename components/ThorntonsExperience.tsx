@@ -445,7 +445,7 @@ export function ThorntonsExperience() {
       </section>
 
       <section className="thorntons-finale">
-        <Image src="/images/thorntons/gift-box-dark.jpg" fill sizes="100vw" alt="Open chocolate gift box in deep red light" />
+        <Image src="/images/thorntons/gift-box-open.png" fill sizes="100vw" alt="Open box of assorted dark chocolates dusted with cocoa" />
         <div className="thorntons-finale-shade" />
         <div>
           <p>Thorntons / Speculative rebrand</p>
