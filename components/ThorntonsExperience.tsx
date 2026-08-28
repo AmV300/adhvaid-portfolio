@@ -120,20 +120,11 @@ export function ThorntonsExperience() {
             alt="Thorntons wordmark with cocoa pod symbol"
             className="thorntons-hero-mark"
           />
-          <Image
-            src="/images/thorntons/thorntons-tagline.png"
-            width={2400}
-            height={189}
-            priority
-            alt="Chocolate Heaven since 1911"
-            className="thorntons-hero-tagline"
-          />
         </div>
         <div className="thorntons-hero-copy">
           <h1 id="thorntons-title">Can heritage feel desirable again?</h1>
           <p>Brand repositioning · Visual identity · Brand experience</p>
         </div>
-        <p className="thorntons-scroll-note">Scroll to unwrap the thinking</p>
       </section>
 
       <section id="problem" className="thorntons-strategy" data-scroll-progress>
