@@ -21,6 +21,7 @@ function CocoaMark({ className = "" }: { className?: string }) {
 
 export function ThorntonsExperience() {
   const rootRef = useRef<HTMLElement>(null);
+  const positioningRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -42,6 +43,49 @@ export function ThorntonsExperience() {
         const progress = clamp(rawProgress / 0.72);
         section.style.setProperty("--progress", progress.toFixed(4));
       });
+    };
+
+    const requestUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+    };
+  }, []);
+
+  useEffect(() => {
+    const section = positioningRef.current;
+    if (!section) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      section.style.setProperty("--positioning-reveal", "0%");
+      section.classList.add("is-visible", "is-complete");
+      return;
+    }
+
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+
+      const rect = section.getBoundingClientRect();
+      const viewport = window.innerHeight;
+      const start = viewport * 0.2;
+      const end = viewport * -0.18;
+      const progress = clamp((start - rect.top) / (start - end));
+
+      section.style.setProperty(
+        "--positioning-reveal",
+        `${((1 - progress) * 100).toFixed(2)}%`,
+      );
+
+      section.classList.toggle("is-visible", progress > 0.01);
+      section.classList.toggle("is-complete", progress >= 0.985);
     };
 
     const requestUpdate = () => {
@@ -123,17 +167,56 @@ export function ThorntonsExperience() {
         </div>
       </section>
 
-      <section className="thorntons-positioning" aria-label="Competitive positioning">
+      <section
+        ref={positioningRef}
+        className="thorntons-positioning"
+        aria-labelledby="thorntons-positioning-title"
+      >
         <p className="thorntons-section-label">The positioning problem</p>
-        <div className="thorntons-axis">
-          <div className="thorntons-axis-labels"><span>Mass</span><span>Premium</span></div>
-          <div className="thorntons-axis-line"><span className="thorntons-axis-dot" /></div>
-          <p>Thorntons</p>
-        </div>
-        <div className="thorntons-axis thorntons-axis--answer">
-          <div className="thorntons-axis-labels"><span>Traditional</span><span>Contemporary craft</span></div>
-          <div className="thorntons-axis-line"><span className="thorntons-axis-dot" /></div>
-          <p>Repositioning the value of heritage</p>
+        <div className="thorntons-positioning-layout">
+          <figure className="thorntons-map">
+            <figcaption className="thorntons-map-caption">
+              Perceptual map showing Thorntons moving from a familiar, mass-market
+              position toward contemporary premium craft.
+            </figcaption>
+
+            <span className="thorntons-map-axis thorntons-map-axis--x" aria-hidden="true" />
+            <span className="thorntons-map-axis thorntons-map-axis--y" aria-hidden="true" />
+
+            <span className="thorntons-map-label thorntons-map-label--traditional">Traditional</span>
+            <span className="thorntons-map-label thorntons-map-label--craft">Contemporary craft</span>
+            <span className="thorntons-map-label thorntons-map-label--mass">Mass</span>
+            <span className="thorntons-map-label thorntons-map-label--premium">Premium</span>
+
+            <svg
+              className="thorntons-map-journey"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path d="M 41 62 C 51 61, 64 44, 74.5 31.5" />
+              <path className="thorntons-map-arrow" d="M 71.1 31.8 L 74.5 31.5 L 73.2 35.4" />
+            </svg>
+
+            <div className="thorntons-map-point thorntons-map-point--today">
+              <span className="thorntons-map-dot" aria-hidden="true" />
+              <p><strong>Thorntons today</strong><span>Familiar heritage</span></p>
+            </div>
+            <div className="thorntons-map-point thorntons-map-point--proposed">
+              <span className="thorntons-map-dot" aria-hidden="true" />
+              <p><strong>Proposed Thorntons</strong><span>Contemporary craft</span></p>
+            </div>
+          </figure>
+
+          <div className="thorntons-positioning-statement">
+            <h2 id="thorntons-positioning-title">
+              From familiar heritage <em>to contemporary craft.</em>
+            </h2>
+            <p>
+              The aim is not to abandon Thorntons&apos; heritage, but to make it signal
+              quality, craftsmanship and desirability.
+            </p>
+          </div>
         </div>
       </section>
 
