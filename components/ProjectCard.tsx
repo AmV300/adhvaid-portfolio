@@ -57,17 +57,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
       ref={cardRef}
       href={project.href}
       data-visible={isVisible}
+      data-media={project.imagePosition}
       className="investigation-card group block py-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-4 md:py-16"
       aria-label={`View ${project.title} case study`}
     >
-      <article className="grid items-stretch gap-8 md:grid-cols-12 md:gap-10">
-        <div
-          className={`investigation-card-media relative aspect-[4/3] overflow-hidden bg-[#E9E8E3] md:col-span-7 ${
-            project.imagePosition === "right"
-              ? "md:order-2"
-              : "md:order-1"
-          }`}
-        >
+      <article className="investigation-card-grid">
+        <div className="investigation-card-media relative overflow-hidden bg-[#E9E8E3]">
           <motion.div
             className="absolute inset-x-0 -inset-y-6 will-change-transform"
             style={{ y: imageY }}
@@ -89,13 +84,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         </div>
 
-        <div
-          className={`investigation-card-details flex min-h-0 flex-col justify-between md:col-span-5 ${
-            project.imagePosition === "right"
-              ? "md:order-1"
-              : "md:order-2"
-          }`}
-        >
+        <div className="investigation-card-details flex min-h-0 flex-col justify-between">
           <div className="text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
             <p>Investigation {project.number}</p>
           </div>
@@ -122,10 +111,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </p>
 
             <span
-              className="mt-9 inline-flex min-h-11 items-center gap-3 border-b border-[#111111] py-2 text-sm font-medium"
+              className="mt-9 inline-flex min-h-11 items-center gap-3 py-2 text-sm font-medium"
               aria-hidden="true"
             >
-              View investigation
+              {/* The rule belongs to the label, so it stops where the words
+                  stop rather than running on under the arrow. */}
+              <span className="border-b border-[#111111] pb-1.5">
+                View investigation
+              </span>
               <span className="transition-transform duration-300 ease-out group-hover:translate-x-1">
                 →
               </span>

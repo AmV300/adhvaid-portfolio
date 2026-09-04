@@ -1,11 +1,28 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function SiteHeader() {
+  // The header is sticky for the whole page, so it needs a ground of its own
+  // once content starts passing underneath it. At the very top it stays
+  // transparent, which keeps the opening screen looking untouched.
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsScrolled(window.scrollY > 8);
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
   return (
-    <header className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 sm:py-6 md:px-10">
+    <header data-scrolled={isScrolled} className="site-header">
       <nav
         aria-label="Primary navigation"
-        className="flex items-center justify-between gap-3 sm:gap-6"
+        className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:gap-6 sm:px-6 sm:py-6 md:px-10"
       >
         <Link
           href="/"

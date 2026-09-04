@@ -61,13 +61,20 @@ export function AldiStrategySequence() {
           ideaIsActive ? "1" : "0",
         );
         sequence.style.setProperty("--aldi-idea-content-y", "0px");
+        sequence.style.setProperty(
+          "--aldi-idea-label-opacity",
+          ideaIsActive ? "1" : "0",
+        );
         return;
       }
 
       const shiftEntrance = scrollEase(0.42, 0.92, progress);
-      const strategyExit = scrollEase(1.18, 1.52, progress);
-      const ideaEntrance = scrollEase(1.18, 1.5, progress);
-      const ideaContentEntrance = scrollEase(1.3, 1.82, progress);
+      const strategyExit = scrollEase(1.18, 1.46, progress);
+      // The dark panel resolves first and on its own. Its label and content
+      // only start appearing once it is fully opaque, so nothing is ever read
+      // against a half-faded, mid-grey ground.
+      const ideaEntrance = scrollEase(1.18, 1.44, progress);
+      const ideaContentEntrance = scrollEase(1.48, 1.86, progress);
 
       sequence.style.setProperty(
         "--aldi-strategy-opacity",
@@ -101,6 +108,10 @@ export function AldiStrategySequence() {
         "--aldi-idea-content-y",
         `${12 * (1 - ideaContentEntrance)}px`,
       );
+      sequence.style.setProperty(
+        "--aldi-idea-label-opacity",
+        String(scrollEase(1.44, 1.62, progress)),
+      );
     };
 
     const requestUpdate = () => {
@@ -127,7 +138,7 @@ export function AldiStrategySequence() {
     <section
       id="strategy"
       ref={sequenceRef}
-      className="aldi-strategy-sequence scroll-mt-24"
+      className="aldi-strategy-sequence case-study-anchor"
       aria-label="Strategic opportunity and big idea"
     >
       <div className="aldi-strategy-stage">
@@ -150,8 +161,10 @@ export function AldiStrategySequence() {
                 </p>
               </div>
 
-              <p className="aldi-strategy-shift font-display text-center text-[clamp(2.8rem,6.2vw,6.25rem)] font-medium leading-[0.94] tracking-[-0.065em]">
-                What does every saving
+              <p className="aldi-strategy-shift font-display text-left text-[clamp(2.8rem,6.2vw,6.25rem)] font-medium leading-[0.94] tracking-[-0.065em]">
+                What does
+                <br />
+                every saving
                 <br />
                 make possible?
               </p>
@@ -161,7 +174,7 @@ export function AldiStrategySequence() {
 
         <div className="aldi-idea-layer">
           <div className="aldi-idea-inner">
-            <p className="text-xs uppercase tracking-[0.18em] text-[#AAA9A3] md:text-sm">
+            <p className="aldi-idea-label text-xs uppercase tracking-[0.18em] text-[#AAA9A3] md:text-sm">
               The Big Idea
             </p>
 
@@ -199,7 +212,7 @@ export function AldiStrategySequence() {
       <div className="aldi-strategy-track" aria-hidden="true">
         <div className="aldi-strategy-stop" />
         <div className="aldi-strategy-stop" />
-        <div id="big-idea" className="aldi-strategy-stop scroll-mt-24" />
+        <div id="big-idea" className="aldi-strategy-stop case-study-anchor" />
       </div>
     </section>
   );

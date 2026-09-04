@@ -40,15 +40,15 @@ export function AboutPreview() {
       className="observer-section bg-[#F1F0EB]"
     >
       <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-12 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]">
-          <p className="observer-label text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
+        <div className="section-heading-grid grid gap-12 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]">
+          <p className="observer-label section-eyebrow text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
             The Observer
           </p>
 
           <div>
             <h2
               id="observer-title"
-              className="observer-title font-display max-w-4xl text-[clamp(3.25rem,6.8vw,6.6rem)] font-medium leading-[0.92] tracking-[-0.065em]"
+              className="observer-title section-heading font-display max-w-4xl font-medium tracking-[-0.065em]"
             >
               I create to understand.
             </h2>

@@ -11,7 +11,7 @@ export function CaseStudyNav({ items }: CaseStudyNavProps) {
   return (
     <nav
       aria-label="Case study sections"
-      className="sticky top-0 z-20 border-y border-[#111111]/15 bg-[#FAFAF8]"
+      className="relative z-20 border-y border-[#111111]/15 bg-[#FAFAF8]"
     >
       <div className="mx-auto max-w-7xl px-6 pt-3 sm:hidden">
         <p className="text-[0.65rem] uppercase tracking-[0.14em] text-[#8A8A84]">

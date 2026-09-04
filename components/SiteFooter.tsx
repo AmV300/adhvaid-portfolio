@@ -38,13 +38,13 @@ export function SiteFooter() {
       data-visible={isVisible}
       className="conversation-section flex min-h-[88svh] flex-col bg-[#191917] text-[#F5F4EF]"
     >
-      <div className="mx-auto grid w-full max-w-7xl flex-1 content-center gap-12 px-6 py-24 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)] md:px-10 md:py-32">
-        <p className="conversation-label text-xs uppercase tracking-[0.18em] text-[#AAA9A3] md:text-sm">
+      <div className="section-heading-grid mx-auto grid w-full max-w-7xl flex-1 content-center gap-12 px-6 py-24 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)] md:px-10 md:py-32">
+        <p className="conversation-label section-eyebrow text-xs uppercase tracking-[0.18em] text-[#AAA9A3] md:text-sm">
           Conversation
         </p>
 
         <div>
-          <h2 className="conversation-title font-display max-w-4xl text-[clamp(2.5rem,10.5vw,6rem)] font-medium leading-[0.94] tracking-[-0.06em]">
+          <h2 className="conversation-title section-heading font-display max-w-4xl font-medium tracking-[-0.06em]">
             If something here made you curious, let&apos;s talk.
           </h2>
 

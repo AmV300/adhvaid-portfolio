@@ -26,7 +26,7 @@ const navigation = [
 
 export default function AldiCaseStudy() {
   return (
-    <main className="min-h-screen bg-[#FAFAF8] text-[#111111]">
+    <main className="aldi-case-study min-h-screen bg-[#FAFAF8] text-[#111111]">
       <SiteHeader />
 
       <CaseStudyHero
@@ -49,7 +49,7 @@ export default function AldiCaseStudy() {
       <CaseStudyNav items={navigation} />
 
       <article className="mx-auto max-w-7xl space-y-28 px-6 pb-28 pt-20 md:space-y-40 md:px-10 md:pb-40 md:pt-28">
-        <section id="overview" className="scroll-mt-24">
+        <section id="overview" className="case-study-anchor">
           <div className="flex items-baseline justify-between gap-4 border-t border-[#111111]/15 pt-5">
             <p className="text-xs uppercase tracking-[0.2em] text-[#6B6B6B] md:text-sm">
               Project Overview
@@ -117,7 +117,7 @@ export default function AldiCaseStudy() {
 
         <section
           id="challenge"
-          className="scroll-mt-24"
+          className="case-study-anchor"
         >
           <div className="flex items-baseline justify-between gap-4 border-t border-[#111111]/15 pt-5">
             <p className="text-xs uppercase tracking-[0.2em] text-[#6B6B6B] md:text-sm">
@@ -192,10 +192,10 @@ export default function AldiCaseStudy() {
 
         <section
           id="insight"
-          className="scroll-mt-24 bg-[#F1F0EB] px-6 py-16 md:px-14 md:py-24"
+          className="case-study-anchor bg-[#F1F0EB] px-6 py-16 md:px-14 md:py-24"
         >
-          <div className="grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]">
-            <p className="text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
+          <div className="section-heading-grid grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]">
+            <p className="section-eyebrow text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
               The Human Insight
             </p>
 
@@ -255,9 +255,9 @@ export default function AldiCaseStudy() {
 
         <AldiStrategySequence />
 
-        <section id="expressions" className="scroll-mt-24">
-          <div className="grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]">
-            <p className="text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
+        <section id="expressions" className="case-study-anchor">
+          <div className="section-heading-grid grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]">
+            <p className="section-eyebrow text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
               Campaign Expression
             </p>
 
@@ -472,10 +472,10 @@ export default function AldiCaseStudy() {
 
         <section
           id="journey"
-          className="scroll-mt-24"
+          className="case-study-anchor"
         >
-          <div className="grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]">
-            <p className="text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
+          <div className="section-heading-grid grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.8fr)]">
+            <p className="section-eyebrow text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
               Connected Journey
             </p>
 
@@ -545,7 +545,7 @@ export default function AldiCaseStudy() {
 
         <section
           id="reflection"
-          className="scroll-mt-24 bg-[#F1F0EB] px-6 py-16 md:px-14 md:py-24"
+          className="case-study-anchor bg-[#F1F0EB] px-6 py-16 md:px-14 md:py-24"
         >
           <p className="text-xs uppercase tracking-[0.18em] text-[#6B6B6B] md:text-sm">
             Reflection

@@ -7,6 +7,16 @@
   --accent: #d9b75d;
   --font-display: Arial, sans-serif;
   --font-body: Arial, sans-serif;
+
+  /* Height of the sticky site header, used for hero sizing and scroll-margin
+     so anchored sections never land underneath the nav. */
+  --header-height: 76px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 92px;
+  }
 }
 
 * {
@@ -37,7 +47,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
-  overflow-x: hidden;
+  /* clip, not hidden: `overflow-x: hidden` forces overflow-y to compute to
+     `auto`, which makes the body a scroll container and stops the sticky
+     header from ever engaging. clip contains the same full-bleed horizontal
+     overflow without creating one. */
+  overflow-x: clip;
 }
 
 /* Thorntons: a contained editorial brand world. The shared portfolio shell
@@ -704,6 +718,17 @@ body {
   }
 }
 
+@keyframes opening-word-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.42em, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes opening-thought-reveal {
   from {
     opacity: 0;
@@ -735,194 +760,115 @@ body {
   animation: arrival-reveal 750ms ease-out 2.7s both;
 }
 
-.home-opening-sequence {
-  --arrival-screen-opacity: 1;
-  --arrival-screen-y: 0px;
-  --thought-main-opacity: 0;
-  --thought-support-opacity: 0;
-  --thought-invitation-opacity: 0;
-  --thought-main-y: 12px;
-  --thought-support-y: 10px;
-  --thought-invitation-y: 8px;
-  --practice-screen-opacity: 0;
-  --practice-screen-y: 14px;
-  --intro-label-opacity: 0;
-  --intro-title-opacity: 0;
-  --intro-copy-opacity: 0;
-  --intro-label-y: 8px;
-  --intro-title-y: 10px;
-  --intro-copy-y: 10px;
-  --investigations-screen-opacity: 0;
-  --investigations-screen-y: 8px;
-  --investigations-label-opacity: 0;
-  --investigations-title-opacity: 0;
-  --investigations-copy-opacity: 0;
-  --investigations-meta-opacity: 0;
-  --investigations-label-y: 8px;
-  --investigations-title-y: 10px;
-  --investigations-copy-y: 10px;
-  --investigations-meta-y: 8px;
-  position: relative;
-  height: 400svh;
-}
-
-.home-opening-stage {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  height: 100svh;
-  overflow: hidden;
-  background: var(--background);
-}
-
-.home-opening-header {
-  position: absolute;
-  inset: 0 0 auto 0;
-  z-index: 5;
-}
-
-.home-opening-track {
-  position: relative;
-  z-index: 0;
-  height: 400svh;
-  margin-top: -100svh;
-  pointer-events: none;
-}
-
-.home-chapter-stop {
-  height: 100svh;
-}
-
-.home-arrival,
-.home-opening-thought,
-.home-practice-screen,
-.home-investigations-screen {
-  position: absolute;
-  inset: 0;
-  min-height: 100svh;
-  overflow: hidden;
-}
-
-.home-arrival {
-  z-index: 4;
-  opacity: var(--arrival-screen-opacity);
-  transform: translate3d(0, var(--arrival-screen-y), 0);
-}
-
-.home-opening-thought {
-  z-index: 3;
-  pointer-events: none;
-}
-
-.home-practice-screen {
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  background: var(--background);
-  opacity: var(--practice-screen-opacity);
-  transform: translate3d(0, var(--practice-screen-y), 0);
-  will-change: transform, opacity;
-}
-
-.home-investigations-screen {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  background: var(--background);
-  opacity: var(--investigations-screen-opacity);
-  transform: translate3d(0, var(--investigations-screen-y), 0);
-  will-change: transform, opacity;
-}
-
-.home-intro-label,
-.home-intro-title,
-.home-intro-copy,
-.home-investigations-label,
-.home-investigations-title,
-.home-investigations-copy,
-.home-investigations-meta {
-  will-change: transform, opacity;
-}
-
-.home-intro-label {
-  opacity: var(--intro-label-opacity);
-  transform: translate3d(0, var(--intro-label-y), 0);
-}
-
-.home-intro-title {
-  opacity: var(--intro-title-opacity);
-  transform: translate3d(0, var(--intro-title-y), 0);
-}
-
-.home-intro-copy {
-  opacity: var(--intro-copy-opacity);
-  transform: translate3d(0, var(--intro-copy-y), 0);
-}
-
-.home-investigations-label {
-  opacity: var(--investigations-label-opacity);
-  transform: translate3d(0, var(--investigations-label-y), 0);
-}
-
-.home-investigations-title {
-  opacity: var(--investigations-title-opacity);
-  transform: translate3d(0, var(--investigations-title-y), 0);
-}
-
-.home-investigations-copy {
-  opacity: var(--investigations-copy-opacity);
-  transform: translate3d(0, var(--investigations-copy-y), 0);
-}
-
-.home-investigations-meta {
-  opacity: var(--investigations-meta-opacity);
-  transform: translate3d(0, var(--investigations-meta-y), 0);
-}
-
-.home-opening-sequence:not([data-active-chapter="introduction"]) .home-practice-screen,
-.home-opening-sequence:not([data-active-chapter="investigations"]) .home-investigations-screen {
-  pointer-events: none;
-}
+/* ---------------------------------------------------------------------------
+   Home opening
+   The opening line assembles on load and occupies a single screen. The
+   sections that follow sit in normal document flow and reveal as they are
+   scrolled into view, rather than being scrubbed by a pinned scroll sequence.
+--------------------------------------------------------------------------- */
 
 .home-thought-role,
-.home-thought-primary,
 .home-thought-supporting,
 .home-thought-invitation {
   will-change: transform, opacity;
 }
 
-.home-thought-role {
-  opacity: var(--thought-main-opacity);
-  transform: translate3d(0, var(--thought-main-y), 0);
-  animation: opening-thought-reveal 360ms
-    cubic-bezier(0.22, 1, 0.36, 1) 0ms backwards;
+/* Each word of the headline carries its own index, so the line assembles from
+   left to right. The last word settles at ~1.17s. */
+.home-thought-word {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, opacity;
+  animation: opening-word-reveal 620ms cubic-bezier(0.22, 1, 0.36, 1)
+    calc(100ms + var(--word-index) * 90ms) backwards;
 }
 
-.home-thought-primary {
-  opacity: var(--thought-main-opacity);
-  transform: translate3d(0, var(--thought-main-y), 0);
-  /* Entrance handled per-word by framer-motion (HeadlineReveal); the vars
-     above keep driving the scroll fade-out. */
+@media (prefers-reduced-motion: reduce) {
+  .home-thought-word,
+  .home-thought-role,
+  .home-thought-supporting,
+  .home-thought-invitation {
+    animation: none;
+  }
+}
+
+/* The headline itself is staggered per word by framer-motion (HeadlineReveal)
+   and settles at ~1.17s. The lines around it are timed to land with it, so the
+   whole opening resolves in about 1.2s. */
+.home-thought-role {
+  animation: opening-thought-reveal 360ms cubic-bezier(0.22, 1, 0.36, 1) 0ms
+    backwards;
 }
 
 .home-thought-supporting {
-  opacity: var(--thought-support-opacity);
-  transform: translate3d(0, var(--thought-support-y), 0);
-  animation: opening-thought-reveal 420ms
-    cubic-bezier(0.22, 1, 0.36, 1) 120ms backwards;
+  animation: opening-thought-reveal 420ms cubic-bezier(0.22, 1, 0.36, 1) 700ms
+    backwards;
 }
 
 .home-thought-invitation {
-  opacity: var(--thought-invitation-opacity);
-  transform: translate3d(0, var(--thought-invitation-y), 0);
-  animation: opening-thought-reveal 420ms
-    cubic-bezier(0.22, 1, 0.36, 1) 200ms backwards;
+  animation: opening-thought-reveal 420ms cubic-bezier(0.22, 1, 0.36, 1) 820ms
+    backwards;
+}
+
+/* ---------------------------------------------------------------------------
+   Investigation cards
+   One grid definition and one media aspect ratio for every card, so the text
+   column and the image can never collide at any width. Cards differ only in
+   which side the image sits on.
+--------------------------------------------------------------------------- */
+
+.investigation-card-grid {
+  display: grid;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.investigation-card-media {
+  --card-media-aspect: 4 / 3;
+  aspect-ratio: var(--card-media-aspect);
+  /* The media takes its width from its grid track and its height from the
+     aspect ratio. Without align-self it would stretch to the row height (set
+     by the taller text column) and the aspect ratio would then drive its width
+     back out past the track, pushing the image under the text. */
+  align-self: start;
+}
+
+@media (min-width: 768px) {
+  .investigation-card-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+
+  .investigation-card-media {
+    grid-column: span 7;
+  }
+
+  .investigation-card-details {
+    grid-column: span 5;
+  }
+
+  /* Mirrored card: the image moves to the right-hand columns. Below this
+     breakpoint the image always leads, whatever the card's orientation. */
+  .investigation-card[data-media="right"] .investigation-card-media {
+    order: 2;
+  }
+
+  .investigation-card[data-media="right"] .investigation-card-details {
+    order: 1;
+  }
 }
 
 .investigation-card-media,
 .investigation-card-details {
   backface-visibility: hidden;
   will-change: transform, opacity;
+}
+
+/* The site header is the only chrome that stays on screen (the case-study nav
+   scrolls away with the page), so the pinned full-screen panels start just
+   below it rather than underneath it. */
+.aldi-case-study {
+  --pinned-top: calc(var(--header-height) + 1.5rem);
 }
 
 .aldi-strategy-sequence {
@@ -934,6 +880,7 @@ body {
   --aldi-idea-y: 10px;
   --aldi-idea-content-opacity: 0;
   --aldi-idea-content-y: 12px;
+  --aldi-idea-label-opacity: 0;
   position: relative;
   height: 300svh;
   isolation: isolate;
@@ -985,7 +932,7 @@ body {
   gap: 2.5rem;
   align-items: center;
   margin-inline: auto;
-  padding: 5.5rem 3.5rem 3rem;
+  padding: var(--pinned-top, 5.5rem) 3.5rem 3rem;
 }
 
 .aldi-idea-inner {
@@ -996,7 +943,7 @@ body {
   flex-direction: column;
   justify-content: center;
   margin-inline: auto;
-  padding: 5.5rem 3.5rem 3rem;
+  padding: var(--pinned-top, 5.5rem) 3.5rem 3rem;
 }
 
 .aldi-strategy-content {
@@ -1026,16 +973,24 @@ body {
   will-change: transform, opacity;
 }
 
+/* The label is held back until the dark panel behind it is fully opaque, so it
+   is only ever read at its full 7.6:1 contrast rather than while the panel is
+   still a half-faded grey. */
+.aldi-idea-label {
+  opacity: var(--aldi-idea-label-opacity);
+  will-change: opacity;
+}
+
 @media (max-width: 767px) {
   .aldi-strategy-inner {
     grid-template-columns: minmax(0, 1fr);
     align-content: center;
     gap: 2rem;
-    padding: 5.5rem 1.5rem 2rem;
+    padding: var(--pinned-top, 5.5rem) 1.5rem 2rem;
   }
 
   .aldi-idea-inner {
-    padding: 5.5rem 1.5rem 2rem;
+    padding: var(--pinned-top, 5.5rem) 1.5rem 2rem;
   }
 
   .aldi-strategy-content {
@@ -1044,13 +999,12 @@ body {
 
   .aldi-strategy-shift {
     margin-top: 3.5rem;
-    text-align: left;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .investigation-card[data-visible="false"] .investigation-card-media {
-    opacity: 0.35;
+    opacity: 0.72;
     transform: translate3d(0, 12px, 0) scale(1.012);
   }
 
@@ -1063,16 +1017,55 @@ body {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
     transition:
-      opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 1050ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 460ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .investigation-card[data-visible="true"] .investigation-card-details {
     opacity: 1;
     transform: translate3d(0, 0, 0);
     transition:
-      opacity 750ms cubic-bezier(0.22, 1, 0.36, 1) 100ms,
-      transform 900ms cubic-bezier(0.22, 1, 0.36, 1) 100ms;
+      opacity 420ms cubic-bezier(0.22, 1, 0.36, 1) 60ms,
+      transform 520ms cubic-bezier(0.22, 1, 0.36, 1) 60ms;
+  }
+
+  .home-practice-screen[data-visible="false"] .home-intro-label,
+  .home-practice-screen[data-visible="false"] .home-intro-title,
+  .home-practice-screen[data-visible="false"] .home-intro-copy,
+  .home-investigations-screen[data-visible="false"] .home-investigations-label,
+  .home-investigations-screen[data-visible="false"] .home-investigations-title,
+  .home-investigations-screen[data-visible="false"] .home-investigations-copy,
+  .home-investigations-screen[data-visible="false"] .home-investigations-meta {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+
+  .home-practice-screen[data-visible="true"] .home-intro-label,
+  .home-practice-screen[data-visible="true"] .home-intro-title,
+  .home-practice-screen[data-visible="true"] .home-intro-copy,
+  .home-investigations-screen[data-visible="true"] .home-investigations-label,
+  .home-investigations-screen[data-visible="true"] .home-investigations-title,
+  .home-investigations-screen[data-visible="true"] .home-investigations-copy,
+  .home-investigations-screen[data-visible="true"] .home-investigations-meta {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition:
+      opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .home-practice-screen[data-visible="true"] .home-intro-title,
+  .home-investigations-screen[data-visible="true"] .home-investigations-title {
+    transition-delay: 80ms;
+  }
+
+  .home-practice-screen[data-visible="true"] .home-intro-copy,
+  .home-investigations-screen[data-visible="true"] .home-investigations-copy {
+    transition-delay: 160ms;
+  }
+
+  .home-investigations-screen[data-visible="true"] .home-investigations-meta {
+    transition-delay: 220ms;
   }
 
   .observer-section[data-visible="false"] .observer-label,
@@ -1167,4 +1160,147 @@ body {
     );
   }
 
+}
+
+
+/* ---------------------------------------------------------------------------
+   Sticky site header
+   The header stays fixed to the top for the whole page rather than releasing
+   when an opening sequence ends. It is transparent over the first screen and
+   takes on the page ground once anything scrolls underneath it.
+--------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: transparent;
+  /* The hairline is drawn as a shadow rather than a border so the header's
+     height stays exactly --header-height. */
+  box-shadow: 0 1px 0 0 transparent;
+  transition:
+    background-color 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.site-header[data-scrolled="true"] {
+  background-color: var(--background);
+  box-shadow: 0 1px 0 0 rgb(17 17 17 / 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
+}
+
+/* Thorntons runs its own full-bleed overlay header inside an absolutely
+   positioned shell, so it opts out of both the sticky behaviour and the
+   scrolled ground. */
+.thorntons-shell-header .site-header,
+.thorntons-shell-header .site-header[data-scrolled="true"] {
+  position: static;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.thorntons-shell-header .site-header > nav {
+  max-width: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Section eyebrow labels
+   Every eyebrow top-aligns to its heading's cap height rather than to the
+   heading's line box. The distance from a line box's top to the top of a
+   capital is:
+
+     (line-height - font-size) / 2  +  (ascender - cap-height) * font-size
+
+   Measured from the two faces in use: Inter ascender 0.970 / cap 0.7275
+   (delta 0.2425) and Space Grotesk ascender 0.980 / cap 0.700 (delta 0.280).
+   The eyebrow is nudged down by the difference between the two, so both caps
+   sit on the same line no matter how many lines the heading runs to.
+--------------------------------------------------------------------------- */
+
+.section-heading-grid {
+  /* Default display-heading size for a section that carries an eyebrow. */
+  --heading-font-size: clamp(2.25rem, 4vw, 3.625rem);
+  --heading-line-height: 1.02;
+  align-items: start;
+}
+
+/* Sections whose heading runs at its own size declare it here, so the size and
+   the eyebrow offset always come from one place. */
+.observer-section .section-heading-grid {
+  --heading-font-size: clamp(3.25rem, 6.8vw, 6.6rem);
+  --heading-line-height: 0.92;
+}
+
+.conversation-section .section-heading-grid {
+  --heading-font-size: clamp(2.5rem, 10.5vw, 6rem);
+  --heading-line-height: 0.94;
+}
+
+.aldi-case-study .section-heading-grid {
+  --heading-font-size: 2.25rem;
+  --heading-line-height: 1.02;
+}
+
+@media (min-width: 768px) {
+  .aldi-case-study .section-heading-grid {
+    --heading-font-size: 3.75rem;
+  }
+}
+
+.section-heading {
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+}
+
+/* The distance from a line box's top to the top of a capital is:
+
+     (line-height - (ascender + descender) * font-size) / 2
+       + (ascender - cap-height) * font-size
+
+   Metrics measured from the two faces in use:
+     Inter          ascender 0.970, descender 0.240, cap 0.7275
+     Space Grotesk  ascender 0.980, descender 0.290, cap 0.700
+
+   The eyebrow is nudged by the difference between its own cap offset and the
+   heading's, so the two caps land on the same line however many lines the
+   heading runs to. */
+.section-eyebrow {
+  --eyebrow-font-size: 0.75rem;
+  --eyebrow-line-height: 1rem;
+  --eyebrow-cap-top: calc(
+    (var(--eyebrow-line-height) - 1.21 * var(--eyebrow-font-size)) / 2 + 0.2425 *
+      var(--eyebrow-font-size)
+  );
+  --heading-cap-top: calc(
+    (var(--heading-line-height) * var(--heading-font-size) - 1.27 *
+      var(--heading-font-size)) / 2 + 0.28 * var(--heading-font-size)
+  );
+  padding-top: max(0px, calc(var(--heading-cap-top) - var(--eyebrow-cap-top)));
+}
+
+@media (min-width: 768px) {
+  .section-eyebrow {
+    --eyebrow-font-size: 0.875rem;
+    --eyebrow-line-height: 1.25rem;
+  }
+}
+
+/* The eyebrow only needs the nudge once it sits beside the heading; stacked
+   on small screens it reads as a plain label above it. */
+@media (max-width: 767px) {
+  .section-eyebrow {
+    padding-top: 0;
+  }
+}
+
+/* Anchored case-study sections land below the sticky header rather than
+   underneath it. */
+.case-study-anchor {
+  scroll-margin-top: calc(var(--header-height) + 1.5rem);
 }
