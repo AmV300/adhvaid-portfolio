@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Fragment } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
+import { projects } from "@/lib/projects";
 import { useScrollChapterKeys } from "@/lib/useScrollChapterKeys";
 import { useEffect, useRef } from "react";
 
@@ -318,13 +319,14 @@ export function HomeOpeningSequence() {
       data-active-chapter="thought"
     >
       <div className="home-opening-stage">
+        <div className="home-opening-header">
+          <SiteHeader />
+        </div>
         <HomeIntroduction />
         <div className="home-practice-screen">
-          <SiteHeader />
           <HomeProfessionalIntroduction />
         </div>
         <div className="home-investigations-screen">
-          <SiteHeader />
           <HomeInvestigationsIntroduction />
         </div>
       </div>
@@ -411,7 +413,7 @@ export function HomeInvestigationsIntroduction() {
             <div className="home-investigations-meta mt-8 flex max-w-[720px] items-center gap-3 text-xs uppercase tracking-[0.14em] text-[#6B6B6B]">
               <p>Selected work</p>
               <span aria-hidden="true">·</span>
-              <p>02 case studies</p>
+              <p>{String(projects.length).padStart(2, "0")} case studies</p>
             </div>
           </div>
         </div>
