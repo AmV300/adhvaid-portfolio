@@ -9,6 +9,7 @@ export type Project = {
   image: string;
   imageAlt: string;
   imagePosition: "left" | "right";
+  status: string;
 };
 
 export const projects: Project[] = [
@@ -19,12 +20,13 @@ export const projects: Project[] = [
     type: "Brand Strategy · Campaign Platform",
     question: "How can Aldi make value feel more human?",
     description:
-      "A brand strategy investigation exploring how Aldi could move beyond price communication and recognise the meaning behind everyday savings.",
+      "Reframing everyday savings as an expression of care, not compromise.",
     href: "/work/aldi",
     image: "/images/aldi/aldi-cover.png",
     imageAlt:
       "A parent and child at a kitchen table beside an Aldi shopping bag",
     imagePosition: "left",
+    status: "Independent speculative project",
   },
   {
     number: "02",
@@ -33,11 +35,12 @@ export const projects: Project[] = [
     type: "Brand Strategy · Creative Campaign",
     question: "How can a brand stay present through life in motion?",
     description:
-      "A creative investigation exploring how a footwear brand can become a constant companion through the changing rhythms of everyday life.",
+      "Positioning comfort as a steady companion through the changing rhythms of everyday life.",
     href: "/work/move-softly",
     image: "/images/move-softly/move-softly-hero.png",
     imageAlt: "A commuter walking beside a city bridge",
     imagePosition: "right",
+    status: "Independent concept project",
   },
   {
     number: "03",
@@ -46,10 +49,11 @@ export const projects: Project[] = [
     type: "Brand Repositioning · Visual Identity",
     question: "How can heritage become an advantage again?",
     description:
-      "A speculative rebrand repositioning a familiar British chocolate name around contemporary craft, cocoa and gifting.",
+      "Repositioning a familiar heritage name around contemporary chocolate craft and gifting.",
     href: "/work/thorntons",
     image: "/images/thorntons/gift-box-open.png",
     imageAlt: "Open box of assorted dark chocolates dusted with cocoa",
     imagePosition: "left",
+    status: "Independent speculative rebrand",
   },
 ];

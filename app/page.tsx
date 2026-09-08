@@ -1,9 +1,8 @@
-import { AboutPreview } from "@/components/AboutPreview";
+import { AboutContact } from "@/components/AboutContact";
 import {
   HomeOpeningSequence,
 } from "@/components/HomeHero";
-import { ProjectCard } from "@/components/ProjectCard";
-import { SiteFooter } from "@/components/SiteFooter";
+import { SelectedWork } from "@/components/SelectedWork";
 import { projects } from "@/lib/projects";
 
 export default function Home() {
@@ -11,19 +10,9 @@ export default function Home() {
     <main className="min-h-screen bg-[#FAFAF8] text-[#111111]">
       <HomeOpeningSequence />
 
-      <section
-        aria-label="Investigation case studies"
-        className="relative z-10 mx-auto max-w-7xl bg-[#FAFAF8] px-6 pb-20 md:px-10 md:pb-28"
-      >
-        <div className="space-y-8 md:space-y-14">
-          {projects.map((project) => (
-            <ProjectCard key={project.number} project={project} />
-          ))}
-        </div>
-      </section>
+      <SelectedWork projects={projects} />
 
-      <AboutPreview />
-      <SiteFooter />
+      <AboutContact />
     </main>
   );
 }
